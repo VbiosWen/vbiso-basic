@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration  xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+    
+    <appender name="root" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="D:/log/vbiso-common.log"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- 设置日志输出的格式 -->
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%-5p] [method:%l]%n%m%n%n" />
+        </layout>
+    </appender>
+
+    <logger name="org.mybatis" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="root"/>
+    </logger>
+
+    <logger name="org.apache.ibatis" additivity="true">
+        <level value="INFO"/>
+        <appender-ref ref="root"/>
+    </logger>
+    <logger name="java.sql.Connection" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="root"/>
+    </logger>
+    <logger name="java.sql.Statement" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="root"/>
+    </logger>
+    <logger name="java.sql.PreparedStatement" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="root"/>
+    </logger>
+    <logger name="java.sql.ResultSet" additivity="true">
+        <level value="INFO" />
+        <appender-ref ref="root"/>
+    </logger>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="root"/>
+    </root>
+</log4j:configuration>

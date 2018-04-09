@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:property-placeholder location="classpath:vbiso-dao.properties"/>
+
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <property name="driverClassName" value="${driverClass}"></property>
+    <property name="url" value="${url}"></property>
+
+    <property name="username" value="${mysql.username}"></property>
+    <property name="password" value="${mysql.password}"></property>
+    <property name="filters" value="stat"/>
+
+    <property name="maxActive" value="20"/>
+    <property name="initialSize" value="1"/>
+    <property name="maxWait" value="60000"/>
+    <property name="minIdle" value="1"/>
+
+    <property name="timeBetweenEvictionRunsMillis" value="60"/>
+    <property name="minEvictableIdleTimeMillis" value="30000"/>
+
+    <property name="testWhileIdle" value="true"/>
+    <property name="testOnBorrow" value="false"/>
+    <property name="testOnReturn" value="false"/>
+
+    <property name="poolPreparedStatements" value="false"/>
+    <property name="maxOpenPreparedStatements" value="20"/>
+  </bean>
+
+  <bean id="sqlSessionFatory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+    <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
+  </bean>
+
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.vbiso.dao"></property>
+  </bean>
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/vbiso-basic.iml" filepath="$PROJECT_DIR$/vbiso-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vbiso-common/vbiso-common.iml" filepath="$PROJECT_DIR$/vbiso-common/vbiso-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vbiso-dao/vbiso-dao.iml" filepath="$PROJECT_DIR$/vbiso-dao/vbiso-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vbiso-domain/vbiso-domain.iml" filepath="$PROJECT_DIR$/vbiso-domain/vbiso-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vbiso-service/vbiso-service.iml" filepath="$PROJECT_DIR$/vbiso-service/vbiso-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vbiso-web/vbiso-web.iml" filepath="$PROJECT_DIR$/vbiso-web/vbiso-web.iml" />
+    </modules>
+  </component>
+</project>

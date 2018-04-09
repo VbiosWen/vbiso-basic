@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vbiso.dao.IncomeDao">
+    <resultMap id="IncomeResult" type="incomeDo">
+        <id column="income_id" property="incomeId" javaType="long"/>
+        <result column="user_id" property="userId" javaType="long"/>
+        <result column="income_date" property="incomeDate" javaType="long"/>
+        <result column="income_data" property="incomeData" javaType="double"/>
+    </resultMap>
+    <sql id="incomeColumn">
+        income_id,
+        user_id,
+        income_date,
+        income_data
+    </sql>
+
+    <select id="getByUserId" parameterType="long" resultMap="IncomeResult">
+        SELECT
+        <include refid="incomeColumn"/>
+        FROM income
+        WHERE
+        user_id=#{userId}
+    </select>
+
+    <insert id="insertIncome" parameterType="incomeDo">
+        insert into
+        income
+         (income_id, user_id, income_date, income_data)
+        values (#{incomeId},#{userId},#{incomeDate},#{incomeData});
+    </insert>
+
+    <update id="updateIncome" parameterType="java.util.List">
+        UPDATE income
+        SET
+        <foreach collection="list" item="fieldDo" index="index">
+            ${key}=${value}
+        </foreach>
+        WHERE
+        user_id=#{userId}
+    </update>
+
+
+    
+</mapper>

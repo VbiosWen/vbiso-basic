@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="vbiso-common" />
+        <module name="vbiso-dao" />
+        <module name="vbiso-domain" />
+        <module name="vbiso-service" />
+        <module name="vbiso-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="vbiso-basic" target="1.8" />
+      <module name="vbiso-common" target="1.8" />
+      <module name="vbiso-dao" target="1.8" />
+      <module name="vbiso-domain" target="1.8" />
+      <module name="vbiso-service" target="1.8" />
+      <module name="vbiso-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

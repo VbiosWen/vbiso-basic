@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vbiso.dao.ExpensesDao">
+    <resultMap id="expensesResult" type="expensesDo">
+        <id column="expenses_id" property="expensesId" javaType="long"/>
+        <result column="user_id" property="userId" javaType="long"/>
+        <result column="expenses_date" property="expensesDate" javaType="long"/>
+        <result column="expenses_data" property="expensesData" javaType="double"/>
+        <result column="expenses_desc" property="expensesDesc" javaType="String"/>
+    </resultMap>
+
+    <sql id="expensesColumn">
+        expenses_id,
+        user_id,
+        expenses_date,
+        expenses_data,
+        expenses_desc
+    </sql>
+
+    <select id="getByUserId" parameterType="long" resultMap="expensesResult">
+        SELECT
+        <include refid="expensesColumn"/>
+        FROM expenses
+        WHERE
+        user_id=#{userId}
+    </select>
+
+</mapper>
