@@ -3,7 +3,7 @@
 <log4j:configuration  xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
     
     <appender name="root" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="D:/log/vbiso-common.log"/>
+        <param name="File" value="/home/vbiso/logs/vbiso-common.log"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
         <layout class="org.apache.log4j.PatternLayout">
             <!-- 设置日志输出的格式 -->

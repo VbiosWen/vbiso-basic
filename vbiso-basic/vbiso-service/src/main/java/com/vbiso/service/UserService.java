@@ -17,5 +17,7 @@ public interface UserService {
 
   ServiceResult updateByUserId(long id,UserDo userDo);
 
+  ServiceResult<Integer> insertUser(UserDo userDo);
+
 
 }

@@ -8,7 +8,21 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-
+*.settings
+*.classpath
+*.project
+*.bak
+*.class
+target
+.sass-cache
+*.log
+bin/**
+.idea/**
+*.iml
+submode
+.svn
+.idea
+~      
 # Compiled class files
 *.class
 

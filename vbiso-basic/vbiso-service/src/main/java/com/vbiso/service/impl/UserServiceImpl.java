@@ -6,6 +6,8 @@ import com.vbiso.mapping.FieldDo;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.UserService;
 import com.vbiso.utils.FieldMappingUtil;
+import org.apache.log4j.Logger;
+import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,8 @@ import java.util.List;
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {
+
+  private Logger logger= Logger.getLogger(UserServiceImpl.class);
 
   @Autowired
   private UserDao userDao;
@@ -63,6 +67,21 @@ public class UserServiceImpl implements UserService {
     }
 
       return result;
+  }
+
+  @Override
+  public ServiceResult<Integer> insertUser(UserDo userDo) {
+    ServiceResult<Integer> result=new ServiceResult<>();
+    userDo.setUserId(System.currentTimeMillis());
+    try {
+      int count = userDao.insertUser(userDo);
+      result.setSuccess(true);
+      result.setCode(0);
+      result.setData(count);
+    } catch (Exception e) {
+      logger.error("error insert",e);
+    }
+    return result;
   }
 
   public static void main(String[] args){
