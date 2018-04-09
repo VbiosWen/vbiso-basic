@@ -16,10 +16,9 @@
 <body>
 
 <div class="login-main">
-${pageContext.forward("/WEB-INF/index.jsp")}
 </div>
 
 
-<script src="layui/layui/layui.js"></script>
+<script src="../layui/layui/layui.js"></script>
 </body>
 </html>

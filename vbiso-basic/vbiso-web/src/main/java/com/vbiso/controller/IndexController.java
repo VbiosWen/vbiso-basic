@@ -26,7 +26,7 @@ public class IndexController {
     UserDo userDo=new UserDo();
     userDo.setUserId(1L);
     ServiceResult<UserDo> result = userService.getByUserId(userDo);
-    return "index";
+    return "login";
   }
 
   @RequestMapping(value = "/test.json")
