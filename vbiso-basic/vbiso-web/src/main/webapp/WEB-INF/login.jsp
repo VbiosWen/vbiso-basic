@@ -12,10 +12,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="/layui/layui/css/layui.css">
+
 </head>
 <body>
 
-<div class="login-main">
+<div class="layui-main">
+    <header class="layui-elip">个人收支管理系统</header>
+    <form class="layui-form">
+        <div class="layui-input-inline">
+            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off" class="layui-input"/>
+        </div>
+    </form>
 </div>
 
 

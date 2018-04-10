@@ -1,0 +1,52 @@
+package com.vbiso.domain;
+
+import java.util.List;
+
+/**
+ * @Author: wenliujie
+ * @Description:
+ * @Date: Created in 下午12:18 2018/4/10
+ * @Modified By:
+ */
+public class PageDo <T>{
+
+  private int start;
+
+  private int size;
+
+  private List<T> page;
+
+  private long totalCount;
+
+  public int getStart() {
+    return start;
+  }
+
+  public void setStart(int start) {
+    this.start = start;
+  }
+
+  public int getSize() {
+    return size;
+  }
+
+  public void setSize(int size) {
+    this.size = size;
+  }
+
+  public List<T> getPage() {
+    return page;
+  }
+
+  public void setPage(List<T> page) {
+    this.page = page;
+  }
+
+  public long getTotalCount() {
+    return totalCount;
+  }
+
+  public void setTotalCount(long totalCount) {
+    this.totalCount = totalCount;
+  }
+}

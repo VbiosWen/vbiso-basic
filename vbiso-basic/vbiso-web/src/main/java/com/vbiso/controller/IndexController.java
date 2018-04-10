@@ -43,5 +43,10 @@ public class IndexController {
       return "login";
   }
 
+  @RequestMapping(value ="/page.json")
+  public String page(){
+    return "income";
+  }
+
 
 }

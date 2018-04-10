@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>layout 后台大布局 - Layui</title>
+    <title>个人收支管理系统</title>
     <link rel="stylesheet" href="/layui/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
@@ -72,8 +72,7 @@
     </div>
 
     <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
+       @vbisowen 日期:2018
     </div>
 </div>
 <script src="/layui/layui/layui.js"></script>

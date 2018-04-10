@@ -16,5 +16,5 @@ public interface IncomeDao {
 
     int updateIncome(long incomeId, List<FieldDo> list);
 
-    List<IncomeDo> selectPage(int start,int size);
+    List<IncomeDo> selectPage(long userId,int start,int size);
 }

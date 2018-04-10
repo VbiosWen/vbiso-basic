@@ -40,6 +40,14 @@
         user_id=#{userId}
     </update>
 
+    <select id="selectPage" parameterType="long" resultMap="IncomeResult">
+        SELECT
+        <include refid="incomeColumn"/>
+        WHERE
+        user_id=#{userId}
+        limit
+        #{start},#{size}
+    </select>
 
     
 </mapper>
