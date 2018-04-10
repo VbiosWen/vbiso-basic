@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8"/>
     <title>收入表</title>
     <link rel="stylesheet" href="/layui/layui/css/layui.css"/>
 </head>

@@ -8,24 +8,49 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>登录页面</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>个人收支管理系统</title>
     <link rel="stylesheet" href="/layui/layui/css/layui.css">
+    <link rel="stylesheet" href="/style/divForm.css"/>
 
 </head>
 <body>
 
-<div class="layui-main">
+<div id="divForm" class="layui-main">
     <header class="layui-elip">个人收支管理系统</header>
-    <form class="layui-form">
-        <div class="layui-input-inline">
-            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off" class="layui-input"/>
+    <form class="layui-form" action="/login" id="loginForm">
+        <div id="mobile" class="layui-input-inline">
+            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
+                   class="layui-input"/>
         </div>
+        <br/>
+        <div class="layui-input-inline">
+            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
+                   class="layui-input"/>
+        </div>
+        <br/>
+        <div class="layui-input-inline">
+            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
+                   class="layui-input"/>
+        </div>
+        <br/>
+        <div class="layui-input-inline">
+            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
+                   class="layui-input"/>
+        </div>
+        <br/>
     </form>
 </div>
 
 
-<script src="../layui/layui/layui.js"></script>
+<script src="/layui/layui/layui.js"></script>
+<script>
+    layui.use(['form','layer'], function () {
+        var form = layui.form(), $ = layui.jquery;
+        var layer=layui.layer;
+        layer.msg("test")
+    });
+</script>
 </body>
 </html>

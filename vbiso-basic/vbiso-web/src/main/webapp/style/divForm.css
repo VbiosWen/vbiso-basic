@@ -1,0 +1,40 @@
+body{
+    background-image: url("/static/image/background.jpg");
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+#divForm {
+    position:absolute;
+    width:500px;
+    height:260px;
+    top:50%;
+    left:50%;
+    margin-left:-250px;
+    height:130px;
+    text-align: center;
+    z-index:1000;
+}
+#loginForm {
+    float: left ;
+    box-shadow: 2px 2px 5px #bbb;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+input{
+    margin: 10px 10px 10px 10px;
+    width: 300px;
+    height: 60px;
+    filter:Alpha(opacity=30);
+    background: rgba(3,4,4,0.6);
+    opacity: .3;
+}
+#mobile {
+    width: 300px ;
+    height: 60px;
+    border: 0px;
+    filter:Alpha(opacity=30);
+    background: rgba(2,2,2,0.6);
+    opacity: .3;
+}
