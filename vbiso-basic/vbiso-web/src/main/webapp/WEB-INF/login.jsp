@@ -18,38 +18,36 @@
 <body>
 
 <div id="divForm" class="layui-main">
-    <header class="layui-elip">个人收支管理系统</header>
-    <form class="layui-form" action="/login" id="loginForm">
+    <h2>
+        <header class="layui-elip">登陆</header>
+    </h2>
+    <form class="layui-form layui-form-pane" action="" id="loginForm">
         <div id="mobile" class="layui-input-inline">
             <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
                    class="layui-input"/>
         </div>
         <br/>
         <div class="layui-input-inline">
-            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
+            <input type="password" name="account" required lay-verify="required" placeholder="密码" autocomplete="off"
                    class="layui-input"/>
         </div>
-        <br/>
-        <div class="layui-input-inline">
-            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
-                   class="layui-input"/>
-        </div>
-        <br/>
-        <div class="layui-input-inline">
-            <input type="text" name="account" required lay-verify="required" placeholder="手机号" autocomplete="off"
-                   class="layui-input"/>
-        </div>
-        <br/>
+        <input type="submit" class="layui-btn layui-btn-normal" id="formSub" />
     </form>
 </div>
 
 
 <script src="/layui/layui/layui.js"></script>
 <script>
-    layui.use(['form','layer'], function () {
-        var form = layui.form(), $ = layui.jquery;
-        var layer=layui.layer;
-        layer.msg("test")
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form, $ = layui.jquery;
+        var layer = layui.layer;
+        form.on('submit(formSub)', function (data) {
+           layer.open({
+              title:test,
+               content:JSON.stringify(data.field)
+           });
+            return true;
+        });
     });
 </script>
 </body>

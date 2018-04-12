@@ -6,8 +6,8 @@ body{
 
 #divForm {
     position:absolute;
-    width:500px;
-    height:260px;
+    width:360px;
+    height:500px;
     top:50%;
     left:50%;
     margin-left:-250px;
@@ -17,24 +17,20 @@ body{
 }
 #loginForm {
     float: left ;
-    box-shadow: 2px 2px 5px #bbb;
+    box-shadow: 2px 2px 5px #4E5465;
+    opacity: 0.8;
     height: 100%;
     width: 100%;
+    background-color: white;
     text-align: center;
 }
 input{
     margin: 10px 10px 10px 10px;
-    width: 300px;
+    width: 360px;
     height: 60px;
-    filter:Alpha(opacity=30);
-    background: rgba(3,4,4,0.6);
-    opacity: .3;
-}
-#mobile {
-    width: 300px ;
-    height: 60px;
-    border: 0px;
-    filter:Alpha(opacity=30);
-    background: rgba(2,2,2,0.6);
-    opacity: .3;
+    font-family: "Arial Black";
+    font-size: 20px;
+    color: #0C0C0C;
+    /*filter:Alpha(opacity=30);*/
+    opacity: .5;
 }
