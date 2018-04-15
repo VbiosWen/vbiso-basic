@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration  xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+  <appender name="rootAppender" class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="File" value="/home/vbiso/logs/vbiso-service.log"/>
+    <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <!-- 设置日志输出的格式 -->
+      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%-5p] [method:%l]%n%m%n%n" />
+    </layout>
+  </appender>
+
+  <root>
+    <level value="INFO"/>
+    <appender-ref ref="rootAppender"/>
+  </root>
+
+
+</log4j:configuration>

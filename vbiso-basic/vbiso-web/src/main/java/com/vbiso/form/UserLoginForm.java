@@ -2,16 +2,16 @@ package com.vbiso.form;
 
 public class UserLoginForm {
 
-    private String account;
+    private String mobile;
 
     private String password;
 
-    public String getAccount() {
-        return account;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getPassword() {

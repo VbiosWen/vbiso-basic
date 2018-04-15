@@ -3,6 +3,8 @@ package com.vbiso.dao.test;
 import com.alibaba.druid.support.json.JSONUtils;
 import com.vbiso.dao.IncomeDao;
 import com.vbiso.domain.IncomeDo;
+import com.vbiso.domain.PageDo;
+import com.vbiso.utils.JsonUtil;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,14 +35,24 @@ public class IncomoTest {
     incomeDo.setIncomeData(55.5);
     incomeDo.setIncomeDate(System.currentTimeMillis());
     incomeDo.setIncomeId(1L);
-    int i = incomeDao.insertIncome(incomeDo);
-    System.out.println(i);
+    //int i = incomeDao.insertIncome(incomeDo);
+    //System.out.println(i);
   }
 
   @Test
   public void selectPage(){
-    List<IncomeDo> incomeDos = incomeDao.selectPage(1L, 0, 2);
-    System.out.println(JSONUtils.toJSONString(incomeDos));
+    PageDo pageDo=new PageDo();
+    pageDo.setUserId(1L);
+    pageDo.setSize(2);
+    pageDo.setStart(0);
+    //List<IncomeDo> incomeDos = incomeDao.selectPage(1L,0,2);
+    //System.out.println(JsonUtil.toJson(incomeDos));
+  }
+
+  @Test
+  public void totalCount(){
+    //long totalCount = incomeDao.getTotalCount(1L);
+    //System.out.println(totalCount);
   }
 
 }

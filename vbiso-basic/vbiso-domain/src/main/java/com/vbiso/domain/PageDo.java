@@ -10,13 +10,23 @@ import java.util.List;
  */
 public class PageDo <T>{
 
+  private long userId;
+
   private int start;
 
   private int size;
 
-  private List<T> page;
+  private T page;
 
   private long totalCount;
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
+  }
 
   public int getStart() {
     return start;
@@ -34,11 +44,11 @@ public class PageDo <T>{
     this.size = size;
   }
 
-  public List<T> getPage() {
+  public T getPage() {
     return page;
   }
 
-  public void setPage(List<T> page) {
+  public void setPage(T page) {
     this.page = page;
   }
 

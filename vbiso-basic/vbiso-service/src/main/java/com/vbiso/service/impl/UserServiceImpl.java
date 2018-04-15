@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
       if(userDo!=null){
         result.setCode(0);
         result.setSuccess(true);
-        result.setData(userDo);
+        result.setData(user);
       }else{
         result.setCode(-2);
         result.setSuccess(true);

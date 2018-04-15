@@ -9,5 +9,6 @@
 
   <import resource="classpath:vbiso-dao.xml"/>
   <import resource="classpath:service-trans.xml"/>
+  <import resource="classpath:jedis-config.xml"/>
   <context:component-scan base-package="com.vbiso.service"/>
 </beans>

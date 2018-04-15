@@ -7,7 +7,8 @@
   http://www.springframework.org/schema/context
   http://www.springframework.org/schema/context/spring-context.xsd">
 
-  <context:property-placeholder location="classpath:vbiso-dao.properties"/>
+  <context:property-placeholder location="classpath:vbiso-dao.properties" ignore-unresolvable="true"/>
+
 
   <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
     <property name="driverClassName" value="${driverClass}"></property>
@@ -42,5 +43,7 @@
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     <property name="basePackage" value="com.vbiso.dao"></property>
   </bean>
+
+
 
 </beans>

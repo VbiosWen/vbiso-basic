@@ -1,7 +1,9 @@
 package com.vbiso.service;
 
+import com.vbiso.domain.PageDo;
 import com.vbiso.domain.UserDo;
 import com.vbiso.result.ServiceResult;
+import java.util.List;
 
 /**
  * @Author: wenliujie
@@ -18,6 +20,7 @@ public interface UserService {
   ServiceResult updateByUserId(long id,UserDo userDo);
 
   ServiceResult<Integer> insertUser(UserDo userDo);
+
 
 
 }

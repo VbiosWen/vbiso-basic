@@ -33,6 +33,9 @@
     <servlet-api.version>2.5</servlet-api.version>
     <jsp-api.version>2.0</jsp-api.version>
     <slf4j.version>1.7.25</slf4j.version>
+    <jackson.version>2.9.2</jackson.version>
+    <jackson.core.version>1.9.13</jackson.core.version>
+    <spring.session.version>1.3.0.RELEASE</spring.session.version>
   </properties>
 
   <dependencyManagement>
@@ -188,6 +191,22 @@
         <version>${jsp-api.version}</version>
         <scope>provided</scope>
       </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-mapper-asl</artifactId>
+        <version>${jackson.core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session</artifactId>
+        <version>${spring.session.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -204,8 +223,6 @@
       </plugin>
     </plugins>
   </build>
-
-
 
 
 </project>

@@ -25,7 +25,7 @@
     <include refid="usersColumn"/>
     FROM users
     WHERE
-    user_id=#{userId}
+    user_mobile=#{userMobile}
     AND
     user_password=#{password}
   </select>

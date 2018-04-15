@@ -1,9 +1,7 @@
 package com.vbiso.utils;
 
-import com.vbiso.domain.UserDo;
 import com.vbiso.mapping.FieldDo;
 
-import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -67,7 +65,8 @@ public class FieldMappingUtil<T>{
 
     public static void main(String[] args){
       String key="userId";
-      buildKey(key);
-  }
+      String s = buildKey(key);
+      System.out.println(s);
+    }
 
 }
