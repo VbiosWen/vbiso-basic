@@ -34,9 +34,9 @@ public class IncomoTest {
     incomeDo.setUserId(1L);
     incomeDo.setIncomeData(55.5);
     incomeDo.setIncomeDate(System.currentTimeMillis());
-    incomeDo.setIncomeId(1L);
-    //int i = incomeDao.insertIncome(incomeDo);
-    //System.out.println(i);
+    incomeDo.setIncomeId(3L);
+    incomeDo.setIncomeDesc("test");
+    incomeDao.insertIncome(incomeDo);
   }
 
   @Test

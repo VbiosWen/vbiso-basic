@@ -23,9 +23,6 @@ public class IndexController {
 
   @RequestMapping(value = "/")
   public String init(){
-    UserDo userDo=new UserDo();
-    userDo.setUserId(1L);
-    ServiceResult<UserDo> result = userService.getByUserId(userDo);
     return "login";
   }
 

@@ -8,12 +8,14 @@
     <result column="user_id" property="userId" javaType="long"/>
     <result column="income_date" property="incomeDate" javaType="long"/>
     <result column="income_data" property="incomeData" javaType="double"/>
+    <result column="income_desc" property="incomeDesc" javaType="String"/>
   </resultMap>
   <sql id="incomeColumn">
         income_id,
         user_id,
         income_date,
-        income_data
+        income_data,
+        income_desc
     </sql>
 
   <select id="getByUserId" parameterType="long" resultMap="IncomeResult">
@@ -27,8 +29,8 @@
   <insert id="insertIncome" parameterType="incomeDo">
         insert into
         income
-         (income_id, user_id, income_date, income_data)
-        values (#{incomeId},#{userId},#{incomeDate},#{incomeData});
+         (income_id, user_id, income_date, income_data,income_desc)
+        values (#{incomeId},#{userId},#{incomeDate},#{incomeData},#{incomeDesc});
     </insert>
 
   <update id="updateIncome" parameterType="java.util.List">

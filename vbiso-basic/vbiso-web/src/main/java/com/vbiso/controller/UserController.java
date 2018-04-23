@@ -5,41 +5,46 @@ import com.vbiso.form.UserLoginForm;
 import com.vbiso.form.UserRegisterForm;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.UserService;
-import java.util.UUID;
+import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+  private static Logger logger = Logger.getLogger(UserController.class);
 
-    @RequestMapping(value = "/login")
-    public String login(UserLoginForm form){
-        UserDo userDo = new UserDo();
-        userDo.setUserMobile(form.getMobile());
-        userDo.setPassword(form.getPassword());
-        ServiceResult<UserDo> userResult = userService.getByUserId(userDo);
-        return "index";
-    }
+  @Autowired
+  private UserService userService;
 
-    @RequestMapping(value = "register")
-    public String register(UserRegisterForm form){
-        UserDo userDo = new UserDo();
-        userDo.setUserNick(form.getUserNick());
-        userDo.setCreatedTime(System.currentTimeMillis());
-        userDo.setUserMobile(form.getMobile());
-        userDo.setModifyTime(System.currentTimeMillis());
-        userDo.setPassword(form.getPassword());
-        userService.insertUser(userDo);
-        return "success";
+  @RequestMapping(value = "/login")
+  @ResponseBody
+  public String login(@RequestBody UserLoginForm form, HttpServletResponse response,
+      HttpServletRequest request) {
+    UserDo userDo = new UserDo();
+    userDo.setUserMobile(form.getMobile());
+    userDo.setPassword(form.getPassword());
+    ServiceResult<UserDo> userResult = userService.getByUserId(userDo);
+    request.getSession().setAttribute("user",userDo);
+    String contextPath = request.getContextPath();
+    try {
+      response.sendRedirect(contextPath + "/index.jsp");
+    } catch (IOException e) {
+      logger.error("can`t find ", e);
     }
+    return "success";
+  }
+
+  @RequestMapping(value = "/register")
+  public String register(UserRegisterForm form) {
+    return "register";
+  }
 }

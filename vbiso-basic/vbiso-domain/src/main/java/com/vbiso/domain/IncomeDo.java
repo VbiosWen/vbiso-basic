@@ -10,6 +10,8 @@ public class IncomeDo {
 
     private double incomeData;
 
+    private String incomeDesc;
+
     public long getIncomeId() {
         return incomeId;
     }
@@ -40,5 +42,13 @@ public class IncomeDo {
 
     public void setIncomeData(double incomeData) {
         this.incomeData = incomeData;
+    }
+
+    public String getIncomeDesc() {
+        return incomeDesc;
+    }
+
+    public void setIncomeDesc(String incomeDesc) {
+        this.incomeDesc = incomeDesc;
     }
 }

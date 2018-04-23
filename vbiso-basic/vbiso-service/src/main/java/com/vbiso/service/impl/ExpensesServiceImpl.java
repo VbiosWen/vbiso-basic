@@ -3,6 +3,7 @@ package com.vbiso.service.impl;
 import com.vbiso.dao.ExpensesDao;
 import com.vbiso.domain.ExpensesDo;
 import com.vbiso.domain.PageDo;
+import com.vbiso.exception.BaseException;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.ExpensesService;
 import java.util.List;
@@ -37,9 +38,10 @@ public class ExpensesServiceImpl implements ExpensesService {
       result.setData(pageDo);
       result.setSuccess(true);
       result.setCode(0);
-    } catch (Exception e) {
+    } catch (BaseException e) {
       result.setSuccess(false);
       result.setCode(-1);
+      logger.error("select page error:"+userId,e);
     }
     return result;
   }

@@ -2,6 +2,7 @@ package com.vbiso.service.impl;
 
 import com.vbiso.dao.UserDao;
 import com.vbiso.domain.UserDo;
+import com.vbiso.exception.BaseException;
 import com.vbiso.mapping.FieldDo;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.UserService;
@@ -41,7 +42,7 @@ public class UserServiceImpl implements UserService {
         result.setSuccess(true);
         result.setMsg("未找到数据");
       }
-    } catch (Exception ex) {
+    } catch (BaseException ex) {
       result.setSuccess(false);
       result.setCode(-1);
       result.setEx(ex);
@@ -61,9 +62,9 @@ public class UserServiceImpl implements UserService {
     } catch (IllegalAccessException e) {
         result.setSuccess(false);
       e.printStackTrace();
-    } catch (Exception e) {
+    } catch (BaseException e) {
         result.setSuccess(false);
-        e.printStackTrace();
+        logger.error("update By UserId error:"+userId,e);
     }
 
       return result;
@@ -78,7 +79,7 @@ public class UserServiceImpl implements UserService {
       result.setSuccess(true);
       result.setCode(0);
       result.setData(count);
-    } catch (Exception e) {
+    } catch (BaseException e) {
       logger.error("error insert",e);
     }
     return result;

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body{
+  background-image: url("/static/images/back.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.main{
+  text-align: center;
+  border-radius:20px;
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+form{
+  display: inline-block;
+}

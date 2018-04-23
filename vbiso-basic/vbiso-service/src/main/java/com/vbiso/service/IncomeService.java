@@ -15,4 +15,6 @@ public interface IncomeService {
 
   ServiceResult<PageDo<List<IncomeDo>>> selectByPage(long userId,int start,int size);
 
+  ServiceResult<Integer>addIncome(IncomeDo incomeDo);
+
 }
