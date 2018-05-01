@@ -4,7 +4,10 @@ import com.alibaba.druid.support.json.JSONUtils;
 import com.vbiso.dao.IncomeDao;
 import com.vbiso.domain.IncomeDo;
 import com.vbiso.domain.PageDo;
+import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.utils.JsonUtil;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,14 +48,34 @@ public class IncomoTest {
     pageDo.setUserId(1L);
     pageDo.setSize(2);
     pageDo.setStart(0);
+    IncomeExpensesQueryPojo incomeExpensesQueryPojo = new IncomeExpensesQueryPojo();
+    Date date = new Date(1523808000000L);
+    String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+    System.out.println(format);
+    incomeExpensesQueryPojo.setStart(1523808000000L);
+    incomeExpensesQueryPojo.setEnd(1525017600000L);
+    incomeExpensesQueryPojo.setPage(1);
+    incomeExpensesQueryPojo.setLimit(5);
+    incomeExpensesQueryPojo.setCategoryId(1L);
+    incomeExpensesQueryPojo.setUserId(1L);
+    long totalCount = incomeDao.getTotalCount(incomeExpensesQueryPojo);
+    System.out.println(totalCount);
+    List<IncomeDo> incomeDos = incomeDao.selectPage(incomeExpensesQueryPojo);
+    System.out.println(JsonUtil.toJson(incomeDos));
     //List<IncomeDo> incomeDos = incomeDao.selectPage(1L,0,2);
     //System.out.println(JsonUtil.toJson(incomeDos));
   }
 
   @Test
   public void totalCount(){
-    //long totalCount = incomeDao.getTotalCount(1L);
-    //System.out.println(totalCount);
+    long totalCount = incomeDao.getTotalCount(null);
+    System.out.println(totalCount);
+  }
+
+  @Test
+  public void testSumIncome(){
+    double sumIncome = incomeDao.getSumIncome(1L);
+    System.out.println(sumIncome);
   }
 
 }

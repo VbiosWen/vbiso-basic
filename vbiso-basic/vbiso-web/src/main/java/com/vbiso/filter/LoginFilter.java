@@ -1,5 +1,6 @@
 package com.vbiso.filter;
 
+import com.vbiso.domain.UserDo;
 import com.vbiso.utils.StringUtil;
 
 import javax.servlet.*;
@@ -22,19 +23,23 @@ public class LoginFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
+        String path=req.getRequestURI();
         HttpSession session = req.getSession();
-        String path = req.getRequestURI();
-        String userInfo= (String) session.getAttribute("user");
-        if (path.indexOf("login.jsp") > -1){
+        UserDo userInfo= (UserDo) session.getAttribute("user");
+        if(path.contains("returnLogin")||path.contains("login")){
             filterChain.doFilter(req,resp);
             return;
-        }else{
-            if(StringUtil.isBlank(userInfo)){
-                resp.sendRedirect("/login.jsp");
+        }else if(path.contains(".css")||path.contains(".js")||path.contains(".jpg")){
+            filterChain.doFilter(req,resp);
+        }
+        else{
+            if(userInfo==null){
+               req.getRequestDispatcher("/user/returnLogin").forward(req,resp);
             }else{
                 filterChain.doFilter(req,resp);
             }
         }
+
 
     }
 

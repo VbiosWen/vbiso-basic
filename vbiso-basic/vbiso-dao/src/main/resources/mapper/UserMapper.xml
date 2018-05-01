@@ -13,14 +13,13 @@
   
   <sql id="usersColumn">
    user_id,
-   user_password,
    user_nick,
    user_mobile,
    created_time,
    modify_time
   </sql>
 
-  <select id="getByUserId" parameterType="long" resultMap="UserResult">
+  <select id="getByUserId" parameterType="userDo" resultMap="UserResult">
     SELECT 
     <include refid="usersColumn"/>
     FROM users
@@ -28,6 +27,14 @@
     user_mobile=#{userMobile}
     AND
     user_password=#{password}
+  </select>
+
+  <select id="getUserInfo" parameterType="long" resultMap="UserResult">
+    SELECT
+    <include refid="usersColumn"/>
+    FROM users
+    WHERE
+    user_id=#{userId}
   </select>
   
   <insert id="insertUser" parameterType="userDo" keyProperty="uid">

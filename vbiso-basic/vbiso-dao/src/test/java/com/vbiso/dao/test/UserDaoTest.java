@@ -1,9 +1,15 @@
 package com.vbiso.dao.test;
 
 import com.alibaba.druid.support.json.JSONUtils;
+import com.vbiso.dao.ExpensesDao;
+import com.vbiso.dao.IncomeDao;
+import com.vbiso.dao.NetincomeDao;
 import com.vbiso.dao.UserDao;
+import com.vbiso.domain.ExpensesDo;
+import com.vbiso.domain.NetIncomeDo;
 import com.vbiso.domain.UserDo;
 import com.vbiso.mapping.FieldDo;
+import com.vbiso.utils.JsonUtil;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,12 +30,18 @@ public class UserDaoTest {
 
   private ApplicationContext context;
   private UserDao userDao;
+  private IncomeDao incomeDao;
+  private ExpensesDao expensesDao;
+  private NetincomeDao netincomeDao;
 
 
   @Before
   public void init(){
     context=new ClassPathXmlApplicationContext(new String[]{"classpath:vbiso-dao.xml"});
     userDao = (UserDao) context.getBean(UserDao.DAO_NAME);
+    incomeDao= (IncomeDao) context.getBean("incomeDao");
+    expensesDao= (ExpensesDao) context.getBean("expensesDao");
+    netincomeDao= (NetincomeDao) context.getBean("netincomeDao");
   }
 
   @Test
@@ -64,6 +76,27 @@ public class UserDaoTest {
     fieldDo.setValue("test-wenliujie1");
     fieldDos.add(fieldDo);
     userDao.updateFieldByUserId(1L, fieldDos);
+  }
+
+  @Test
+  public void testGetByUserId(){
+    UserDo userDo = new UserDo();
+    userDo.setUserMobile("15639114941");
+    userDo.setPassword("123456");
+    UserDo byUserId = userDao.getByUserId(userDo);
+    System.out.println(JsonUtil.toJson(byUserId));
+  }
+
+  @Test
+  public void insertnetincome(){
+    double sumIncome = incomeDao.getSumIncome(1L);
+    double sumExpenses=expensesDao.getSumData(1L);
+    NetIncomeDo netIncomeDo = new NetIncomeDo();
+    netIncomeDo.setUserId(1L);
+    netIncomeDo.setNetincomeData(sumIncome-sumExpenses);
+    netIncomeDo.setNetincomeId(System.currentTimeMillis());
+    netIncomeDo.setNetincomeDate(System.currentTimeMillis());
+    netincomeDao.insertNetincome(netIncomeDo);
   }
 
 

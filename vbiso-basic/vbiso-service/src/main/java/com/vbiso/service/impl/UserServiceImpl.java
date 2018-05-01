@@ -1,7 +1,11 @@
 package com.vbiso.service.impl;
 
+import com.vbiso.dao.ExpensesDao;
+import com.vbiso.dao.IncomeDao;
+import com.vbiso.dao.NetincomeDao;
 import com.vbiso.dao.UserDao;
 import com.vbiso.domain.UserDo;
+import com.vbiso.domain.UserInfo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.mapping.FieldDo;
 import com.vbiso.result.ServiceResult;
@@ -27,6 +31,15 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private UserDao userDao;
+
+  @Autowired
+  private IncomeDao incomeDao;
+
+  @Autowired
+  private ExpensesDao expensesDao;
+
+  @Autowired
+  private NetincomeDao netincomeDao;
 
   @Override
   public ServiceResult<UserDo> getByUserId(UserDo userDo) {
@@ -81,6 +94,34 @@ public class UserServiceImpl implements UserService {
       result.setData(count);
     } catch (BaseException e) {
       logger.error("error insert",e);
+    }
+    return result;
+  }
+
+  @Override
+  public ServiceResult<UserInfo> getUserInfo(long userId) {
+    ServiceResult<UserInfo> result=new ServiceResult<>();
+    try {
+      UserDo userDo = userDao.getUserInfo(userId);
+      double sumIncome = incomeDao.getSumIncome(userId);
+      double sumData = expensesDao.getSumData(userId);
+      double netincomeData=netincomeDao.getSumNetincome(userId);
+      UserInfo userInfo = new UserInfo();
+      userInfo.setUserId(userId);
+      userInfo.setSex(userDo.getUserSex());
+      userInfo.setUserNick(userDo.getUserNick());
+      userInfo.setExpensesData(sumData);
+      userInfo.setIncomeData(sumIncome);
+      userInfo.setSumData(netincomeData);
+      result.setData(userInfo);
+      result.setSuccess(true);
+      result.setCode(0);
+      result.setMsg("success");
+    } catch (BaseException e) {
+      result.setMsg("failed");
+      result.setCode(-1);
+      result.setSuccess(false);
+      logger.error("error get",e);
     }
     return result;
   }

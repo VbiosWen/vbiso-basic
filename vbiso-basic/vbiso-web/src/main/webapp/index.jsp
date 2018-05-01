@@ -23,10 +23,11 @@
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img"
                          style="align-items: center;">
-                    ${sessionScope.get("user")}
+                    <span>${sessionScope.get("user").userNick}</span>
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="#">基本资料</a></dd>
+                    <dd><a href="#" class="userInfo" data-id="userInfo" title="基本资料"
+                           data-url="/user/userInfo">基本资料</a></dd>
                     <dd><a href="#">退出登录</a></dd>
                 </dl>
             </li>
@@ -40,7 +41,9 @@
                     <dl class="layui-nav-child">
                         <dd><a href="#" class="incomeNotes" data-id="incomeNotes" title="收入记录"
                                data-url="/income/listPage"
-                               data-type="tabAdd">收入记录</a></dd>
+                               data-type="tabAdd" id="incomeNotes">收入记录</a></dd>
+                        <dd><a href="#" class="expenseNotes" data-id="expenseNotes" title="支出记录"
+                               data-url="/expense/listPage">支出记录</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -62,7 +65,7 @@
         </div>
     </div>
     <div class="layui-body" id="container">
-        <div class="layui-tab" lay-filter="tabs" lay-allowClose="true">
+        <div class="layui-tab" id="tabs" lay-filter="tabs" lay-allowClose="true">
             <ul class="layui-tab-title">
                 <li class="layui-this">首页</li>
             </ul>
@@ -87,7 +90,8 @@
       tabAdd: function (url, id, name) {
         element.tabAdd('tabs', {
           title: name,
-          content:'<iframe scrolling="auto" frameborder="0" src="'+url+'" style="width:100%;height:100%"></iframe>',
+          content: '<iframe scrolling="auto" frameborder="0" src="' + url
+          + '" style="width:100%;height:100%"></iframe>',
           id: id
         })
       },
@@ -97,25 +101,59 @@
       tabDelete: function (id) {
         element.tabDelete('tabs', id);
       },
-      tabDeleteAll:function (ids) {
-        $.each(ids,function (i, item) {
-          element.tabDelete('tabs',item);
+      tabDeleteAll: function (ids) {
+        $.each(ids, function (i, item) {
+          element.tabDelete('tabs', item);
         });
       }
     };
-    $('.incomeNotes').on('click',function () {
+    $('.incomeNotes').on('click', function () {
+      var dataId = $(this);
+      if ($('.layui-tab-title li[lay-id]').length <= 0) {
+        active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
+      } else {
+        var isData = false;
+        $.each($(".layui-tab-title li[lay-id]"), function () {
+          if ($(this).attr("lay-id") == dataId.attr("data-id")) {
+            isData = true;
+          }
+        });
+        if (isData == false) {
+          active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
+        }
+      }
+      active.tabChange(dataId.attr("data-id"));
+    });
+    $('.expenseNotes').on('click',function () {
       var dataId=$(this);
       if($('.layui-tab-title li[lay-id]').length<=0){
         active.tabAdd(dataId.attr("data-url"),dataId.attr("data-id"),dataId.attr("title"));
       }else{
         var isData=false;
-        $.each($(".layui-tab-title li[lay-id]"),function () {
+        $.each($('.layui-tab-title li[lay-id]'),function () {
           if($(this).attr("lay-id")==dataId.attr("data-id")){
             isData=true;
           }
         });
-        if (isData==false){
+        if(isData==false){
           active.tabAdd(dataId.attr("data-url"),dataId.attr("data-id"),dataId.attr("title"));
+        }
+      }
+      active.tabChange(dataId.attr("data-id"));
+    });
+    $('.userInfo').on('click', function () {
+      var dataId = $(this);
+      if ($('.layui-tab-title li[lay-id]').length <= 0) {
+        active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
+      } else {
+        var isData = false;
+        $.each($(".layui-tab-title li[lay-id]"), function () {
+          if ($(this).attr("lay-id") == dataId.attr("data-id")) {
+            isData = true;
+          }
+        });
+        if (isData == false) {
+          active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
         }
       }
       active.tabChange(dataId.attr("data-id"));

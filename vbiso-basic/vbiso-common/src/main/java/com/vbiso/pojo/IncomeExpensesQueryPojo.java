@@ -1,12 +1,12 @@
-package com.vbiso.form;
+package com.vbiso.pojo;
 
 /**
  * @Author: wenliujie
  * @Description:
- * @Date: Created in 下午4:50 2018/4/18
+ * @Date: Created in 下午9:59 2018/4/25
  * @Modified By:
  */
-public class PageForm {
+public class IncomeExpensesQueryPojo {
 
   private int page;
 
@@ -18,12 +18,22 @@ public class PageForm {
 
   private long categoryId;
 
-  public void setCategoryId(long categoryId) {
-    this.categoryId = categoryId;
-  }
+  private long userId;
 
   public long getCategoryId() {
     return categoryId;
+  }
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
+  }
+
+  public void setCategoryId(long categoryId) {
+    this.categoryId = categoryId;
   }
 
   public long getStart() {
@@ -43,11 +53,11 @@ public class PageForm {
   }
 
   public int getPage() {
-    return page;
+    return page*limit;
   }
 
   public void setPage(int page) {
-    this.page = page;
+    this.page = page-1;
   }
 
   public int getLimit() {
@@ -57,4 +67,5 @@ public class PageForm {
   public void setLimit(int limit) {
     this.limit = limit;
   }
+
 }

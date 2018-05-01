@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.vbiso.dao.CategoryDao">
+
+  <resultMap id="categoryResult" type="categoryDo">
+    <id column="category_id" property="categoryId" javaType="long"/>
+    <result column="user_id" property="userId" javaType="long"/>
+    <result column="category_desc" property="categoryDesc" javaType="String"/>
+  </resultMap>
+
+  <sql id="cateogtyColumn">
+    category_id,
+    user_id,
+    category_desc
+  </sql>
+
+  <insert id="insertCategory" parameterType="categoryDo">
+    INSERT INTO category
+    (category_id, category_desc, user_id)
+    VALUES
+    (#{categoryId},#{categoryDesc},#{userId})
+  </insert>
+
+  <select id="selectCategoryList" parameterType="long" resultMap="categoryResult">
+    SELECT
+    <include refid="cateogtyColumn"/>
+    FROM
+    category
+    WHERE
+    user_id=#{userId}
+  </select>
+
+</mapper>

@@ -2,6 +2,7 @@ package com.vbiso.service;
 
 import com.vbiso.domain.IncomeDo;
 import com.vbiso.domain.PageDo;
+import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.result.ServiceResult;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  */
 public interface IncomeService {
 
-  ServiceResult<PageDo<List<IncomeDo>>> selectByPage(long userId,int start,int size);
+  ServiceResult<PageDo<List<IncomeDo>>> selectByPage(IncomeExpensesQueryPojo incomeExpensesQueryPojo);
 
   ServiceResult<Integer>addIncome(IncomeDo incomeDo);
 

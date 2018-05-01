@@ -1,7 +1,9 @@
 package com.vbiso.service;
 
+import com.vbiso.dao.ExpensesDao;
 import com.vbiso.domain.ExpensesDo;
 import com.vbiso.domain.PageDo;
+import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.result.ServiceResult;
 import java.util.List;
 
@@ -15,6 +17,8 @@ public interface ExpensesService {
 
   String SERVICENAME="expensesService";
 
-  ServiceResult<PageDo<List<ExpensesDo>>> selectPage(long userId,int start,int size);
+  ServiceResult<PageDo<List<ExpensesDo>>> selectPage(IncomeExpensesQueryPojo incomeExpensesQueryPojo);
+
+  ServiceResult<Integer> insertExpenses(ExpensesDo expensesDo);
 
 }

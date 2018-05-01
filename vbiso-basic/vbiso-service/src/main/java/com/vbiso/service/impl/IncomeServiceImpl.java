@@ -4,6 +4,7 @@ import com.vbiso.dao.IncomeDao;
 import com.vbiso.domain.IncomeDo;
 import com.vbiso.domain.PageDo;
 import com.vbiso.exception.BaseException;
+import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.IncomeService;
 import com.vbiso.utils.JsonUtil;
@@ -29,13 +30,13 @@ public class IncomeServiceImpl implements IncomeService {
 
 
   @Override
-  public ServiceResult<PageDo<List<IncomeDo>>> selectByPage(long userId, int start, int size) {
+  public ServiceResult<PageDo<List<IncomeDo>>> selectByPage(IncomeExpensesQueryPojo incomeExpensesQueryPojo) {
     ServiceResult<PageDo<List<IncomeDo>>> result=new ServiceResult<>();
     try {
-      List<IncomeDo> incomeDos = incomeDao.selectPage(userId, start, size);
-      long totalCount = incomeDao.getTotalCount(userId);
+      List<IncomeDo> incomeDos = incomeDao.selectPage(incomeExpensesQueryPojo);
+      long totalCount = incomeDao.getTotalCount(incomeExpensesQueryPojo);
       PageDo<List<IncomeDo>> pageDo = new PageDo<>();
-      pageDo.setUserId(userId);
+      pageDo.setUserId(incomeExpensesQueryPojo.getUserId());
       pageDo.setTotalCount(totalCount);
       pageDo.setPage(incomeDos);
       result.setData(pageDo);

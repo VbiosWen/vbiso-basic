@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -10,17 +11,16 @@
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body>
-
-<button class="layui-btn" id="addIncome">添加</button>
+<button class="layui-btn" id="addExpense">添加</button>
 <div class="layui-inline">
     <label class="layui-form-label">查询:</label>
     <div class="layui-input-inline">
-        <input type="text" name="incomeDate" id="start" lay-verify="datetime"
+        <input type="text" name="expensesDate" id="start" lay-verify="datetime"
                placeholder="开始时间"
                autocomplete="off" class="layui-input"/>
     </div>
     <div class="layui-input-inline">
-        <input type="text" name="incomeDate" id="end" lay-verify="datetime"
+        <input type="text" name="expensesDate" id="end" lay-verify="datetime"
                placeholder="结束时间"
                autocomplete="off" class="layui-input"/>
     </div>
@@ -35,38 +35,71 @@
     </div>
 </div>
 <button class="layui-btn" data-type="reload">搜索</button>
-
-<table class="layui-hide" id="test"></table>
+<div class="expensesTable">
+    <table class="layui-hide" id="expensesTable"></table>
+</div>
 
 
 <script src="/layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 <script>
-  layui.use(['table','element','layer','form','laydate'], function () {
+  layui.use(['table', 'element', 'layer', 'laydate', 'form'], function () {
     var table = layui.table;
-    var element=layui.element;
-    var $=layui.jquery;
-    var form=layui.form;
-    var laydate=layui.laydate;
-
+    var element = layui.element;
+    var form = layui.form;
+    var $ = layui.jquery;
+    var laydate = layui.laydate;
     laydate.render({
-      elem: '#start,#end',
-      type: 'datetime',
+      elem:'#start',
+      type:'datetime'
     });
-    var categoryResult=null;
+    laydate.render({
+      elem:'#end',
+      type:'datetime'
+    })
+    var start={
+      max:new Date(),
+      min:new Date(),
+      istoday:true,
+      choose:function (datas) {
+        end.min=datas;
+        end.start=datas;
+      }
+    };
+    var end={
+      max:new Date(),
+      min:new Date(),
+      istoday:false,
+      choose:function (datas) {
+        start.max=datas;
+      }
+    };
+    $('#start').on('click',function () {
+      start.elem=this;
+    });
+    $('#end').on('click',function () {
+      end.elem=this;
+    });
+
+    // laydate.render({
+    //   elem:'#start,#end',
+    //   type:'datetime'
+    // });
+    var categoryResult = null;
     $.ajax({
       url: '/category/selectAll',
       type: 'post',
-      async:false,
+      async: false,
       contentType: 'application/json;charset=UTF-8',
       success: function (result) {
         select(result);
-        callBack(result);
+        callback(result);
       }
     });
-    function callBack(result) {
-      categoryResult=result;
+
+    function callback(result) {
+      categoryResult = result;
     }
 
     function select(result) {
@@ -77,42 +110,43 @@
       });
       form.render('select');
     }
+
     table.render({
-      elem: '#test',
+      elem: '#expensesTable',
       total: 'data.totalCount',
-      url: '/income/page',
+      url: '/expense/page',
       cellMinWidth: 80,
       cols: [[
-        {field: 'incomeId', title: 'ID', sort: true}
-        , {field: 'incomeData', title: '收入总数'} //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
-        , {field: 'incomeDate', title: '日期', templet: '#createTime'}
-        , {field: 'incomeDesc', title: '收入详情'}
-        ,{field:'categoryId',title:'分类'}
+        {field: 'expensesId', title: 'ID', sort: true}
+        , {field: 'expensesData', title: '支出金额', type: 'double'} //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
+        , {field: 'expensesDate', title: '日期', templet: '#createTime'}
+        , {field: 'expensesDesc', title: '支出详情'}
+        , {field: 'categoryId', name: 'category', title: '分类'}
       ]],
       page: 'true',
       limit: '10',
       limits: [10, 15, 20, 30],
-      id: 'test',
-      done:function (res,curr,count) {
+      id: 'expenseTable',
+      done: function (res, curr, count) {
+        console.log(res);
         $("[data-field='categoryId']").children().each(function () {
-          var type=$(this);
+          var type = $(this);
           categoryResult.data.forEach(function (value) {
-            if(type.text()==value.categoryId){
+            if (type.text() == value.categoryId) {
               type.text(value.categoryDesc);
             }
           })
         });
       }
     });
-
-    $('#addIncome').click(function () {
-     layer.open({
-       title:'添加收入记录',
-       type:'2',
-       area:['550px','500px'],
-       btn:'退出',
-       content:'<iframe src="/income/addIncome" height="100%" width="100%" frameborder="0"></iframe>'
-     })
+    $('#addExpense').click(function () {
+      layer.open({
+        title: '添加支出记录',
+        type: '2',
+        area: ['550px', '500px'],
+        btn: '确定',
+        content: '<iframe src="/expense/add" height="100%" width="100%" frameborder="0"></iframe>'
+      })
     });
 
     function selectChange() {
@@ -120,7 +154,7 @@
       return data;
     }
 
-    var incomeActive = {
+    var expensesActive = {
       reload: function () {
         var category = selectChange();
         var start = $('#start').val();
@@ -133,17 +167,17 @@
         if (isNaN(endVal)) {
           endVal = 0;
         }
-        table.reload('test', {
+        table.reload('expenseTable', {
           where: {
             start: startVal,
             end: endVal,
-            categoryId:category
+            categoryId: category
           }
         });
       }
     };
     $('.layui-btn').on('click', function () {
-      incomeActive.reload();
+      expensesActive.reload();
     });
   });
 </script>
@@ -153,11 +187,10 @@
 <script id="createTime" type="text/html">
     {{#
     var date = new Date();
-    date.setTime(d.incomeDate);
+    date.setTime(d.expensesDate);
     return date.Format("yyyy-MM-dd hh:mm:ss");
     }}
 </script>
-
 
 
 </body>

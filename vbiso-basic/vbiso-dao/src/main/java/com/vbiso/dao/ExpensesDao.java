@@ -3,6 +3,7 @@ package com.vbiso.dao;
 import com.vbiso.domain.ExpensesDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.mapping.FieldDo;
+import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.codehaus.jackson.map.Serializers.Base;
@@ -17,11 +18,12 @@ public interface ExpensesDao {
 
   int insertExpenses(ExpensesDo expensesDo) throws BaseException;
 
-  int updateExpensesField(long userId, List<FieldDo> list) throws BaseException;
+  int updateExpensesField(@Param("userId") long userId,@Param("list") List<FieldDo> list) throws BaseException;
 
-  List<ExpensesDo> selectPage(@Param("userId") long userId, @Param("start") int start,
-      @Param("size") int size) throws BaseException;
+  List<ExpensesDo> selectPage(IncomeExpensesQueryPojo incomeExpensesQueryPojo) throws BaseException;
 
-  long getTotcalCount(@Param("userId") long userId)throws BaseException;
+  long getTotalCount(IncomeExpensesQueryPojo incomeExpensesQueryPojo)throws BaseException;
+
+  double getSumData(@Param("userId") long userId);
 
 }

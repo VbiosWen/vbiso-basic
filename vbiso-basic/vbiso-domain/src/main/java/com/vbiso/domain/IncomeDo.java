@@ -12,6 +12,16 @@ public class IncomeDo {
 
     private String incomeDesc;
 
+    private long categoryId;
+
+    public long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
+    }
+
     public long getIncomeId() {
         return incomeId;
     }

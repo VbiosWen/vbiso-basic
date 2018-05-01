@@ -71,16 +71,13 @@
       // });
       $.ajax({
         type: 'post',
-        async: false,
         url: '/user/login',
         contentType:'application/json;charset=UTF-8',
         data:JSON.stringify(data.field),
         success: function (data) {
-          var code = data.code;
-          console.log(code);
+          location.href="../index.jsp";
         }
       });
-      return false;
     })
   })
 

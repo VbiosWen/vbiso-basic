@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/vbiso-dao/vbiso-dao.iml" filepath="$PROJECT_DIR$/vbiso-dao/vbiso-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/vbiso-domain/vbiso-domain.iml" filepath="$PROJECT_DIR$/vbiso-domain/vbiso-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/vbiso-service/vbiso-service.iml" filepath="$PROJECT_DIR$/vbiso-service/vbiso-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vbiso-timejob/vbiso-timejob.iml" filepath="$PROJECT_DIR$/vbiso-timejob/vbiso-timejob.iml" />
       <module fileurl="file://$PROJECT_DIR$/vbiso-web/vbiso-web.iml" filepath="$PROJECT_DIR$/vbiso-web/vbiso-web.iml" />
     </modules>
   </component>

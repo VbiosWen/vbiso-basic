@@ -3,9 +3,7 @@ package com.vbiso.dao;
 import com.vbiso.domain.UserDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.mapping.FieldDo;
-import java.lang.reflect.Field;
 import java.util.List;
-import java.util.Map;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -18,14 +16,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
 
-  String DAO_NAME="userDao";
+  String DAO_NAME = "userDao";
 
-  UserDo getByUserId(UserDo userDo)throws BaseException;
+  UserDo getByUserId(UserDo userDo) throws BaseException;
 
   int insertUser(UserDo userDo) throws BaseException;
 
-  int updateFieldByUserId(@Param("userId") long userId, @Param("list") List<FieldDo> list) throws BaseException;
+  int updateFieldByUserId(@Param("userId") long userId, @Param("list") List<FieldDo> list)
+      throws BaseException;
 
-
+  UserDo getUserInfo(@Param("userId") long userId) throws BaseException;
 
 }

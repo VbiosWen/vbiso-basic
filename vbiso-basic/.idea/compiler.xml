@@ -10,6 +10,7 @@
         <module name="vbiso-dao" />
         <module name="vbiso-domain" />
         <module name="vbiso-service" />
+        <module name="vbiso-timejob" />
         <module name="vbiso-web" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="vbiso-dao" target="1.8" />
       <module name="vbiso-domain" target="1.8" />
       <module name="vbiso-service" target="1.8" />
+      <module name="vbiso-timejob" target="1.8" />
       <module name="vbiso-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vbiso.dao.NetincomeDao">
+  <resultMap id="netincomeResult" type="com.vbiso.domain.NetIncomeDo">
+    <id column="netincome_id" property="netIncomeId" javaType="long"/>
+    <result column="user_id" property="userId" javaType="long"/>
+    <result column="netincome_data" property="netincomeData" javaType="long"/>
+    <result column="netincome_date" property="netincomeDate" javaType="long"/>
+  </resultMap>
+
+  <sql id="netincomeColumn">
+    netincome_id,
+    user_id,
+    netincome_data,
+    netincome_date
+  </sql>
+
+  <select id="getNetincome" parameterType="long" resultMap="netincomeResult">
+    SELECT
+    <include refid="netincomeColumn"/>
+    FROM NetIncome
+    WHERE
+    user_id=#{userId}
+  </select>
+
+  <select id="getSumNetincome" parameterType="long" resultType="double">
+    SELECT sum(netincome_data) FROM NetIncome WHERE user_id=#{userId}
+  </select>
+
+  <insert id="insertNetincome" parameterType="netincomeDo">
+    INSERT INTO NetIncome(netincome_id, netincome_data, user_id, netincome_date)
+    VALUES (#{netincomeId},#{netincomeData},#{userId},#{netincomeDate})
+  </insert>
+</mapper>

@@ -20,6 +20,16 @@ public class UserDo {
 
  private long modifyTime;
 
+ private int userSex;
+
+  public int getUserSex() {
+    return userSex;
+  }
+
+  public void setUserSex(int userSex) {
+    this.userSex = userSex;
+  }
+
   public long getUserId() {
     return userId;
   }

@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/vbiso-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vbiso-domain" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vbiso-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vbiso-timejob" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vbiso-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/layui/font/iconfont.eot" charset="UTF-8" />
   </component>

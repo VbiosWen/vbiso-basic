@@ -2,12 +2,15 @@ package com.vbiso.controller;
 
 import com.vbiso.domain.IncomeDo;
 import com.vbiso.domain.PageDo;
+import com.vbiso.domain.UserDo;
 import com.vbiso.form.IncomeForm;
 import com.vbiso.form.PageForm;
+import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.result.LayUIResult;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.IncomeService;
 import com.vbiso.utils.JsonUtil;
+import com.vbiso.utils.UserLoginUtil;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +34,17 @@ public class IncomeController {
 
   @RequestMapping(value = "/page")
   @ResponseBody
-  public LayUIResult<List<IncomeDo>> pageIncome(PageForm pageForm){
+  public LayUIResult<List<IncomeDo>> pageIncome(PageForm pageForm,HttpServletRequest request){
+    UserDo userDo = UserLoginUtil.getUserLoginInfo(request);
     LayUIResult<List<IncomeDo>> layUIResult=new LayUIResult<>();
-    ServiceResult<PageDo<List<IncomeDo>>> result = incomeService.selectByPage(1L, pageForm.getPage(), pageForm.getLimit());
+    IncomeExpensesQueryPojo incomeExpensesQueryPojo=new IncomeExpensesQueryPojo();
+    incomeExpensesQueryPojo.setUserId(userDo.getUserId());
+    incomeExpensesQueryPojo.setEnd(pageForm.getEnd());
+    incomeExpensesQueryPojo.setStart(pageForm.getStart());
+    incomeExpensesQueryPojo.setLimit(pageForm.getLimit());
+    incomeExpensesQueryPojo.setPage(pageForm.getPage());
+    incomeExpensesQueryPojo.setCategoryId(pageForm.getCategoryId());
+    ServiceResult<PageDo<List<IncomeDo>>> result = incomeService.selectByPage(incomeExpensesQueryPojo);
     layUIResult.setCode(result.getCode());
     layUIResult.setMsg("success");
     layUIResult.setCount(result.getData().getTotalCount());
@@ -53,13 +64,14 @@ public class IncomeController {
 
   @RequestMapping(value = "/add")
   @ResponseBody
-  public ServiceResult<Integer> add(@RequestBody IncomeForm incomeForm){
+  public ServiceResult<Integer> add(@RequestBody IncomeForm incomeForm,HttpServletRequest request){
+    UserDo userDo = UserLoginUtil.getUserLoginInfo(request);
     IncomeDo incomeDo = new IncomeDo();
     incomeDo.setIncomeId(System.currentTimeMillis());
     incomeDo.setIncomeDate(incomeForm.getIncomeDate());
     incomeDo.setIncomeData(incomeForm.getIncomeData());
     incomeDo.setIncomeDesc(incomeForm.getDesc());
-    incomeDo.setUserId(1L);
+    incomeDo.setUserId(userDo.getUserId());
     ServiceResult<Integer> result = incomeService.addIncome(incomeDo);
     return result;
   }
