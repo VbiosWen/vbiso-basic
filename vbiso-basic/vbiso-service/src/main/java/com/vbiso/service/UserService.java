@@ -18,11 +18,13 @@ public interface UserService {
 
   ServiceResult<UserDo> getByUserId(UserDo userDo);
 
-  ServiceResult updateByUserId(long id,UserDo userDo);
+  ServiceResult<Integer> updateByUserId(long id,UserDo userDo);
 
   ServiceResult<Integer> insertUser(UserDo userDo);
 
   ServiceResult<UserInfo> getUserInfo(long userId);
+
+  ServiceResult<UserDo> getUserInfoNoPass(long userId);
 
 
 

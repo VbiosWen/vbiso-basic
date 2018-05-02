@@ -16,6 +16,16 @@ public class ExpenseForm {
 
   private long expensesDate;
 
+  private long category;
+
+  public long getCategory() {
+    return category;
+  }
+
+  public void setCategory(long category) {
+    this.category = category;
+  }
+
   public long getUserId() {
     return userId;
   }

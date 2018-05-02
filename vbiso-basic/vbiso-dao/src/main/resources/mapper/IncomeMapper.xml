@@ -69,7 +69,7 @@
   </select>
 
   <select id="getTotalCount" parameterType="com.vbiso.pojo.IncomeExpensesQueryPojo" resultType="long">
-        SELECT count(0) FROM income
+        SELECT count(1) FROM income
         <where>
           user_id=#{userId}
 

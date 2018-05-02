@@ -12,9 +12,19 @@ public class IncomeForm {
 
   private double incomeData;
 
+  private long category;
+
   private String file;
 
   private String desc;
+
+  public long getCategory() {
+    return category;
+  }
+
+  public void setCategory(long category) {
+    this.category = category;
+  }
 
   public String getDesc() {
     return desc;

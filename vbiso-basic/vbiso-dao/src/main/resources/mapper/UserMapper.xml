@@ -8,12 +8,14 @@
     <result column="user_mobile" property="userMobile" javaType="String"/>
     <result column="user_nick" property="userNick" javaType="String"/>
     <result column="created_time" property="createdTime" javaType="long"/>
+    <result column="user_sex" property="userSex" javaType="int"/>
     <result column="modify_time" property="modifyTime" javaType="long"/>
   </resultMap>
   
   <sql id="usersColumn">
    user_id,
    user_nick,
+   user_sex,
    user_mobile,
    created_time,
    modify_time
@@ -36,7 +38,14 @@
     WHERE
     user_id=#{userId}
   </select>
-  
+
+  <select id="getUserInfoNoPass" parameterType="long" resultMap="UserResult">
+    SELECT
+    <include refid="usersColumn"/>
+    FROM users
+    WHERE
+    user_id=#{userId}
+  </select>
   <insert id="insertUser" parameterType="userDo" keyProperty="uid">
    INSERT INTO users
    (user_id, user_nick, user_password, created_time, modify_time, user_mobile)
@@ -47,7 +56,7 @@
   <update id="updateFieldByUserId" parameterType="java.util.List">
     UPDATE users
     set
-    <foreach collection="list" item="fieldDo" index="index">
+    <foreach collection="list" item="fieldDo" index="index" separator=",">
        ${fieldDo.key} = #{fieldDo.value}
     </foreach>
     WHERE user_id = #{userId}

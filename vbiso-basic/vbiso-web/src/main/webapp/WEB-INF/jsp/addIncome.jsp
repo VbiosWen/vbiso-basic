@@ -116,7 +116,7 @@
            layer.open({
              title:'返回信息',
              content:msg
-           })
+           });
          }
        }
      });

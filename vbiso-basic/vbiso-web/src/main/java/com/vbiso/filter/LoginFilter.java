@@ -35,6 +35,7 @@ public class LoginFilter implements Filter {
         else{
             if(userInfo==null){
                req.getRequestDispatcher("/user/returnLogin").forward(req,resp);
+//                resp.sendRedirect("/user/returnLogin");
             }else{
                 filterChain.doFilter(req,resp);
             }

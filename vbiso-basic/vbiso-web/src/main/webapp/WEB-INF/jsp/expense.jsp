@@ -144,7 +144,7 @@
         title: '添加支出记录',
         type: '2',
         area: ['550px', '500px'],
-        btn: '确定',
+        btn: '退出',
         content: '<iframe src="/expense/add" height="100%" width="100%" frameborder="0"></iframe>'
       })
     });

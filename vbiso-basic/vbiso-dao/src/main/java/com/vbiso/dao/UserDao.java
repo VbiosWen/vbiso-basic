@@ -27,4 +27,6 @@ public interface UserDao {
 
   UserDo getUserInfo(@Param("userId") long userId) throws BaseException;
 
+  UserDo getUserInfoNoPass(@Param("userId") long userId) throws BaseException;
+
 }

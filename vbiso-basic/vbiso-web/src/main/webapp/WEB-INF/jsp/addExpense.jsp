@@ -36,6 +36,15 @@
             </div>
         </div>
     </div>
+    <div class="layui-inline layui-form">
+        <label class="layui-form-label">分类:</label>
+        <div class="layui-input-inline">
+            <select name="category" id="category" lay-verify="required" lay-search=""
+                    lay-filter="selectFilter">
+                <option value="0">请选择分类</option>
+            </select>
+        </div>
+    </div>
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
         <legend>编辑内容</legend>
     </fieldset>
@@ -64,6 +73,23 @@
       elem:'#date',
       type:'datetime'
     });
+    $.ajax({
+      url: '/category/selectAll',
+      type: 'post',
+      contentType: 'application/json;charset=UTF-8',
+      success: function (result) {
+        select(result);
+      }
+    });
+
+    function select(result) {
+      var data = result.data;
+      data.forEach(function (value) {
+        $('#category').append("<option value='" + value.categoryId + "'>" + value.categoryDesc
+            + "</option>");
+      });
+      form.render('select');
+    }
     var index=layedit.build('editExpense');
     form.on('submit(sub)',function (data) {
       var editTest=layedit.getText(index);

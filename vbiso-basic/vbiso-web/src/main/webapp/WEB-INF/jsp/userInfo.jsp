@@ -17,7 +17,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">昵称:</label>
             <div class="layui-input-inline">
-                <input type="text" id="userNick" name="userNick" lay-verify="required"
+                <input type="text" id="userNick" lay-verify="userNick" name="userNick"
                        autocomplete="off"
                        class="layui-input"/>
             </div>
@@ -34,7 +34,7 @@
         <label class="layui-form-label">新密码:</label>
         <div class="layui-inline">
             <div class="layui-input-inline">
-                <input type="password" name="userPassword" autocomplete="off" class="layui-input"/>
+                <input type="password" lay-verify="userPassword" name="userPassword" autocomplete="off" class="layui-input"/>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
         <label class="layui-form-label">确认密码:</label>
         <div class="layui-inline">
             <div class="layui-input-inline">
-                <input type="password" name="userPasswordAg" autocomplete="off"
+                <input type="password" name="userPasswordAg" id="userPasswordAg" autocomplete="off"
                        class="layui-input"/>
             </div>
         </div>
@@ -76,6 +76,10 @@
                        class="layui-input" readonly="readonly"/>
             </div>
         </div>
+    </div>
+    <div class="layui-form-item">
+        <button type="button" class="layui-btn btn-submit" lay-submit="" lay-filter="sub">修改
+        </button>
     </div>
 </form>
 
@@ -127,10 +131,49 @@
         if(!new RegExp("/^[\S]{6,12}$/")){
           return '用户密码必须6到12位';
         }
-        if(value!=null){
-
+        if(value!=""){
+          console.log("test");
+          var agPass=$('#userPasswordAg').val();
+          if(agPass==""){
+            return '请再次输入密码';
+          }
+          else if(value!=agPass){
+            return '两次输入密码不一致';
+          }
         }
       }
+    });
+    form.on('submit(sub)',function (data) {
+      if(data.field['userPassword']==""){
+        delete data.field['userPassword'];
+      }
+      if(data.field['userPasswordAg']==""){
+        delete data.field['userPasswordAg'];
+      }
+      delete data.field['incomeData'];
+      delete data.field['expensesData'];
+      delete data.field['sumData'];
+      $.ajax({
+        url:'/user/updateUserInfo',
+        type: 'post',
+        contentType: 'application/json;charset=UTF-8',
+        data:JSON.stringify(data.field),
+        success:function (data) {
+          if(data.success){
+            layer.open({
+              title:'修改用户信息',
+              btn:'确定',
+              content:'修改用户信息成功'
+            });
+          }else{
+            layer.open({
+              title:'修改用户信息',
+              btn:'确定',
+              content:'修改失败，请联系管理员'
+            });
+          }
+        }
+      })
     });
   });
 </script>

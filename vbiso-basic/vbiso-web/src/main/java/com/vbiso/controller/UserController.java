@@ -4,10 +4,12 @@ import static org.springframework.http.HttpMethod.POST;
 
 import com.vbiso.domain.UserDo;
 import com.vbiso.domain.UserInfo;
+import com.vbiso.form.UserForm;
 import com.vbiso.form.UserLoginForm;
 import com.vbiso.form.UserRegisterForm;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.UserService;
+import com.vbiso.utils.StringUtil;
 import com.vbiso.utils.UserLoginUtil;
 import java.io.IOException;
 import javax.servlet.ServletContext;
@@ -54,6 +56,29 @@ public class UserController {
     return "success";
   }
 
+  @RequestMapping(value = "/getUserInfo")
+  @ResponseBody
+  public ServiceResult<UserInfo>getUserInfo(HttpServletRequest request){
+     UserDo userDo= UserLoginUtil.getUserLoginInfo(request);
+    ServiceResult<UserInfo> userInfo = userService.getUserInfo(userDo.getUserId());
+    return userInfo;
+  }
+
+  @RequestMapping(value = "/updateUserInfo")
+  @ResponseBody
+  public ServiceResult<Integer> updateUserInfo(HttpServletRequest request,@RequestBody UserForm userForm){
+    UserDo userLoginInfo = UserLoginUtil.getUserLoginInfo(request);
+    UserDo userDo = new UserDo();
+    userDo.setUserNick(userForm.getUserNick());
+    userDo.setPassword(StringUtil.isBlank(userForm.getUserPassword())==true?null:userForm.getUserPassword());
+    userDo.setUserSex(userForm.getSex());
+    ServiceResult<Integer> result = userService.updateByUserId(userLoginInfo.getUserId(), userDo);
+    ServiceResult<UserDo> userInfo = userService.getUserInfoNoPass(userLoginInfo.getUserId());
+    request.getSession().removeAttribute("user");
+    request.getSession().setAttribute("user",userInfo.getData());
+    return result;
+  }
+
   @RequestMapping(value = "/returnLogin")
   public String returnLogin(){
     return "login";
@@ -67,13 +92,5 @@ public class UserController {
   @RequestMapping(value = "/userInfo")
   public String userInfo(){
     return "userInfo";
-  }
-
-  @RequestMapping(value = "/getUserInfo")
-  @ResponseBody
-  public ServiceResult<UserInfo>getUserInfo(HttpServletRequest request){
-     UserDo userDo= UserLoginUtil.getUserLoginInfo(request);
-    ServiceResult<UserInfo> userInfo = userService.getUserInfo(userDo.getUserId());
-    return userInfo;
   }
 }

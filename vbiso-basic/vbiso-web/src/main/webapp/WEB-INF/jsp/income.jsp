@@ -43,30 +43,35 @@
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 <script>
-  layui.use(['table','element','layer','form','laydate'], function () {
+  layui.use(['table', 'element', 'layer', 'form', 'laydate'], function () {
     var table = layui.table;
-    var element=layui.element;
-    var $=layui.jquery;
-    var form=layui.form;
-    var laydate=layui.laydate;
+    var element = layui.element;
+    var $ = layui.jquery;
+    var form = layui.form;
+    var laydate = layui.laydate;
 
     laydate.render({
-      elem: '#start,#end',
-      type: 'datetime',
+      elem: '#start',
+      type: 'datetime'
     });
-    var categoryResult=null;
+    laydate.render({
+      elem: '#end',
+      type: 'datetime'
+    });
+    var categoryResult = null;
     $.ajax({
       url: '/category/selectAll',
       type: 'post',
-      async:false,
+      async: false,
       contentType: 'application/json;charset=UTF-8',
       success: function (result) {
         select(result);
         callBack(result);
       }
     });
+
     function callBack(result) {
-      categoryResult=result;
+      categoryResult = result;
     }
 
     function select(result) {
@@ -77,6 +82,7 @@
       });
       form.render('select');
     }
+
     table.render({
       elem: '#test',
       total: 'data.totalCount',
@@ -87,17 +93,17 @@
         , {field: 'incomeData', title: '收入总数'} //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
         , {field: 'incomeDate', title: '日期', templet: '#createTime'}
         , {field: 'incomeDesc', title: '收入详情'}
-        ,{field:'categoryId',title:'分类'}
+        , {field: 'categoryId', title: '分类'}
       ]],
       page: 'true',
       limit: '10',
       limits: [10, 15, 20, 30],
       id: 'test',
-      done:function (res,curr,count) {
+      done: function (res, curr, count) {
         $("[data-field='categoryId']").children().each(function () {
-          var type=$(this);
+          var type = $(this);
           categoryResult.data.forEach(function (value) {
-            if(type.text()==value.categoryId){
+            if (type.text() == value.categoryId) {
               type.text(value.categoryDesc);
             }
           })
@@ -106,13 +112,13 @@
     });
 
     $('#addIncome').click(function () {
-     layer.open({
-       title:'添加收入记录',
-       type:'2',
-       area:['550px','500px'],
-       btn:'退出',
-       content:'<iframe src="/income/addIncome" height="100%" width="100%" frameborder="0"></iframe>'
-     })
+      layer.open({
+        title: '添加收入记录',
+        type: '2',
+        area: ['550px', '500px'],
+        btn: '退出',
+        content: '<iframe src="/income/addIncome" height="100%" width="100%" frameborder="0"></iframe>'
+      })
     });
 
     function selectChange() {
@@ -137,7 +143,7 @@
           where: {
             start: startVal,
             end: endVal,
-            categoryId:category
+            categoryId: category
           }
         });
       }
@@ -157,7 +163,6 @@
     return date.Format("yyyy-MM-dd hh:mm:ss");
     }}
 </script>
-
 
 
 </body>

@@ -9,6 +9,7 @@ import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.result.LayUIResult;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.IncomeService;
+import com.vbiso.utils.IdUtil;
 import com.vbiso.utils.JsonUtil;
 import com.vbiso.utils.UserLoginUtil;
 import java.util.List;
@@ -67,11 +68,12 @@ public class IncomeController {
   public ServiceResult<Integer> add(@RequestBody IncomeForm incomeForm,HttpServletRequest request){
     UserDo userDo = UserLoginUtil.getUserLoginInfo(request);
     IncomeDo incomeDo = new IncomeDo();
-    incomeDo.setIncomeId(System.currentTimeMillis());
+    incomeDo.setIncomeId(IdUtil.generateId());
     incomeDo.setIncomeDate(incomeForm.getIncomeDate());
     incomeDo.setIncomeData(incomeForm.getIncomeData());
     incomeDo.setIncomeDesc(incomeForm.getDesc());
     incomeDo.setUserId(userDo.getUserId());
+    incomeDo.setCategoryId(incomeForm.getCategory());
     ServiceResult<Integer> result = incomeService.addIncome(incomeDo);
     return result;
   }

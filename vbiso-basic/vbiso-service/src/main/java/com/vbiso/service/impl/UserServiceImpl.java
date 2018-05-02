@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public ServiceResult updateByUserId(long userId,UserDo userDo) {
+  public ServiceResult<Integer> updateByUserId(long userId,UserDo userDo) {
     ServiceResult result=new ServiceResult();
     try {
         List<FieldDo> fieldAsList = FieldMappingUtil.getFieldAsList(userDo);
@@ -125,6 +125,17 @@ public class UserServiceImpl implements UserService {
     }
     return result;
   }
+
+  @Override
+  public ServiceResult<UserDo> getUserInfoNoPass(long userId) {
+    UserDo userInfoNoPass = userDao.getUserInfoNoPass(userId);
+    ServiceResult<UserDo> result = new ServiceResult<>();
+    result.setSuccess(true);
+    result.setCode(0);
+    result.setData(userInfoNoPass);
+    return result;
+  }
+
 
   public static void main(String[] args){
     int sum=0;
