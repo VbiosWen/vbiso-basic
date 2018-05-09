@@ -12,7 +12,7 @@ public class UserDo {
 
  private String userNick;
 
- private String password;
+ private String userPassword;
 
  private String userMobile;
 
@@ -46,12 +46,12 @@ public class UserDo {
     this.userNick = userNick;
   }
 
-  public String getPassword() {
-    return password;
+  public String getUserPassword() {
+    return userPassword;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setUserPassword(String userPassword) {
+    this.userPassword = userPassword;
   }
 
   public String getUserMobile() {

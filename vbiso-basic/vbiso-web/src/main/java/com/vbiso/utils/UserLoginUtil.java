@@ -1,6 +1,7 @@
 package com.vbiso.utils;
 
 import com.vbiso.domain.UserDo;
+import com.vbiso.result.ServiceResult;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -12,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 public class UserLoginUtil {
 
   public static UserDo getUserLoginInfo(HttpServletRequest request){
-    return (UserDo) request.getSession().getAttribute("user");
+    ServiceResult<UserDo> user = (ServiceResult<UserDo>) request.getSession().getAttribute("user");
+    return user.getData();
   }
 
 }

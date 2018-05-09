@@ -23,12 +23,12 @@
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img"
                          style="align-items: center;">
-                    <span>${sessionScope.get("user").userNick}</span>
+                    <span>${sessionScope.get("user").data.userNick}</span>
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="#" class="userInfo" data-id="userInfo" title="基本资料"
                            data-url="/user/userInfo">基本资料</a></dd>
-                    <dd><a href="#">退出登录</a></dd>
+                    <dd><a href="/user/removeSession">退出登录</a></dd>
                 </dl>
             </li>
         </ul>
@@ -51,9 +51,12 @@
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">收支统计</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="#">收入统计</a></dd>
-                        <dd><a href="#">支出统计</a></dd>
-                        <dd><a href="#">净收入统计</a></dd>
+                        <dd><a href="#" class="incomeCount" data-id="incomeCount" title="收入统计"
+                        data-url="/income/incomeCount" data-type="tabAdd" id="incomeCount">收入统计</a></dd>
+                        <dd><a href="#" class="expensesCount" data-id="expensesCount" title="支出统计"
+                        data-url="/expense/expensesCount" data-type="tabAdd" id="expensesCount">支出统计</a></dd>
+                        <dd><a href="#" class="netincomeCount" data-id="netincomeCount" title="净收入统计"
+                        data-url="/netincome/netincomeCount" data-type="tabAdd" id="netincomeCount">净收入统计</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -143,6 +146,40 @@
     });
     $('.userInfo').on('click', function () {
       var dataId = $(this);
+      if ($('.layui-tab-title li[lay-id]').length <= 0) {
+        active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
+      } else {
+        var isData = false;
+        $.each($(".layui-tab-title li[lay-id]"), function () {
+          if ($(this).attr("lay-id") == dataId.attr("data-id")) {
+            isData = true;
+          }
+        });
+        if (isData == false) {
+          active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
+        }
+      }
+      active.tabChange(dataId.attr("data-id"));
+    });
+   $('.incomeCount').on('click',function () {
+     var dataId=$(this);
+     if ($('.layui-tab-title li[lay-id]').length <= 0) {
+       active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
+     } else {
+       var isData = false;
+       $.each($(".layui-tab-title li[lay-id]"), function () {
+         if ($(this).attr("lay-id") == dataId.attr("data-id")) {
+           isData = true;
+         }
+       });
+       if (isData == false) {
+         active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
+       }
+     }
+     active.tabChange(dataId.attr("data-id"));
+   });
+    $('.expensesCount').on('click',function () {
+      var dataId=$(this);
       if ($('.layui-tab-title li[lay-id]').length <= 0) {
         active.tabAdd(dataId.attr("data-url"), dataId.attr("data-id"), dataId.attr("title"));
       } else {

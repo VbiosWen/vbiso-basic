@@ -1,51 +1,48 @@
 package com.vbiso.filter;
 
-import com.vbiso.domain.UserDo;
-import com.vbiso.utils.StringUtil;
 
+import com.vbiso.domain.UserDo;
+import com.vbiso.result.ServiceResult;
 import javax.servlet.*;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import org.springframework.web.filter.OncePerRequestFilter;
 
-public class LoginFilter implements Filter {
+public class LoginFilter extends OncePerRequestFilter {
 
-
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-      ServletContext servletContext = filterConfig.getServletContext();
-      String contextPath = servletContext.getContextPath();
-    }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
-            throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) servletRequest;
-        HttpServletResponse resp = (HttpServletResponse) servletResponse;
-        String path=req.getRequestURI();
-        HttpSession session = req.getSession();
-        UserDo userInfo= (UserDo) session.getAttribute("user");
-        if(path.contains("returnLogin")||path.contains("login")){
-            filterChain.doFilter(req,resp);
-            return;
-        }else if(path.contains(".css")||path.contains(".js")||path.contains(".jpg")){
-            filterChain.doFilter(req,resp);
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+        FilterChain filterChain) throws ServletException, IOException {
+      String requestURI = request.getRequestURI();
+
+      ServiceResult<UserDo> result= (ServiceResult<UserDo>) request.getSession().getAttribute("user");
+      if(requestURI.contains(".css")||requestURI.contains(".js")||requestURI.contains(".jpg")){
+        filterChain.doFilter(request,response);
+        return;
+      }
+      if(requestURI.contains("/returnLogin")||requestURI.contains("login")||"/".equals(requestURI)){
+        if(result==null&&requestURI.contains("/user/login")){
+          filterChain.doFilter(request,response);
+          return;
+        }else if(result==null){
+          request.getRequestDispatcher("/user/returnLogin").forward(request,response);
+          return;
         }
-        else{
-            if(userInfo==null){
-               req.getRequestDispatcher("/user/returnLogin").forward(req,resp);
-//                resp.sendRedirect("/user/returnLogin");
-            }else{
-                filterChain.doFilter(req,resp);
-            }
+        if(!result.isSuccess()){
+          filterChain.doFilter(request,response);
+          return;
+        }else if(result.getData()==null){
+          filterChain.doFilter(request,response);
         }
-
-
-    }
-
-    @Override
-    public void destroy() {
-
+      }else{
+        if (result==null){
+          response.sendRedirect("../user/returnLogin");
+        }else {
+          filterChain.doFilter(request,response);
+        }
+      }
     }
 }

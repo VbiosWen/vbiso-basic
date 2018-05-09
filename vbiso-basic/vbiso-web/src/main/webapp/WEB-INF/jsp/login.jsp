@@ -75,7 +75,17 @@
         contentType:'application/json;charset=UTF-8',
         data:JSON.stringify(data.field),
         success: function (data) {
-          location.href="../index.jsp";
+          console.log(data);
+         if(data.success){
+           location.href="../index.jsp";
+         }else {
+           layer.open({
+             title:'登录失败',
+             type:1,
+             btn:'确定',
+             content:'用户名或者密码错误，请重新登录'
+           });
+         }
         }
       });
     })

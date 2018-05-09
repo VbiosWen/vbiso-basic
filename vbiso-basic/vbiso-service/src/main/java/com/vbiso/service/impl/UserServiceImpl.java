@@ -4,6 +4,8 @@ import com.vbiso.dao.ExpensesDao;
 import com.vbiso.dao.IncomeDao;
 import com.vbiso.dao.NetincomeDao;
 import com.vbiso.dao.UserDao;
+import com.vbiso.domain.IncomeCountDo;
+import com.vbiso.domain.IncomeCountQueryDo;
 import com.vbiso.domain.UserDo;
 import com.vbiso.domain.UserInfo;
 import com.vbiso.exception.BaseException;
@@ -46,13 +48,13 @@ public class UserServiceImpl implements UserService {
     ServiceResult result=new ServiceResult();
     try {
       UserDo user = userDao.getByUserId(userDo);
-      if(userDo!=null){
+      if(user!=null){
         result.setCode(0);
         result.setSuccess(true);
         result.setData(user);
       }else{
         result.setCode(-2);
-        result.setSuccess(true);
+        result.setSuccess(false);
         result.setMsg("未找到数据");
       }
     } catch (BaseException ex) {

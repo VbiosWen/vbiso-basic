@@ -11,7 +11,8 @@
 </head>
 <body>
 
-<button class="layui-btn" id="addIncome">添加</button>
+<button class="layui-btn" id="addIncome">添加收支记录</button>
+<button class="layui-btn" id="addCategory">添加分类</button>
 <div class="layui-inline">
     <label class="layui-form-label">查询:</label>
     <div class="layui-input-inline">
@@ -119,6 +120,15 @@
         btn: '退出',
         content: '<iframe src="/income/addIncome" height="100%" width="100%" frameborder="0"></iframe>'
       })
+    });
+    $('#addCategory').click(function () {
+      layer.open({
+        title: '添加分类',
+        type: '2',
+        area: ['500px', '200px'],
+        btn: '退出',
+        content: '<iframe src="/category/addCategory" height="100%" width="100%" frameborder="0" scrolling="no"></iframe>'
+      });
     });
 
     function selectChange() {

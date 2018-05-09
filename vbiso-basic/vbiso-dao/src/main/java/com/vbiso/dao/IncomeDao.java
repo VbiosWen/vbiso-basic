@@ -1,5 +1,9 @@
 package com.vbiso.dao;
 
+import com.vbiso.domain.EveryIncomeDo;
+import com.vbiso.domain.IncomeCategoryDo;
+import com.vbiso.domain.IncomeCountDo;
+import com.vbiso.domain.IncomeCountQueryDo;
 import com.vbiso.domain.IncomeDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.mapping.FieldDo;
@@ -25,4 +29,10 @@ public interface IncomeDao {
       throws BaseException;
 
   double getSumIncome(@Param("userId") long userId);
+
+  List<IncomeCountDo> getDayIncome(IncomeCountQueryDo incomeCountQueryDo)throws BaseException;
+
+  List<IncomeCategoryDo> getCategoryIncome(IncomeCountQueryDo incomeCountQueryDo)throws BaseException;
+
+  List<EveryIncomeDo> getEveryCategoryIncome(IncomeCountQueryDo incomeCountQueryDo)throws BaseException;
 }

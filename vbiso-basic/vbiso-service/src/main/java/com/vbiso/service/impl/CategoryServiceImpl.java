@@ -5,6 +5,7 @@ import com.vbiso.domain.CategoryDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.CategoryService;
+import com.vbiso.utils.IdUtil;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,23 @@ public class CategoryServiceImpl implements CategoryService {
       result.setSuccess(false);
       result.setEx(e);
     }
+    return result;
+  }
+
+  @Override
+  public ServiceResult<Integer> insertCategory(CategoryDo categoryDo) {
+    ServiceResult<Integer> result=new ServiceResult<>();
+    try {
+      categoryDo.setCategoryId(IdUtil.generateId());
+      int count = categoryDao.insertCategory(categoryDo);
+      result.setSuccess(true);
+      result.setData(count);
+      result.setCode(0);
+    } catch (BaseException e) {
+      result.setCode(-1);
+      result.setSuccess(false);
+    }
+
     return result;
   }
 }

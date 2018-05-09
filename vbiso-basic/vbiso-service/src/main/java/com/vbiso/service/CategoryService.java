@@ -14,4 +14,6 @@ public interface CategoryService {
 
   ServiceResult<List<CategoryDo>> selectCatList(long userId);
 
+  ServiceResult<Integer> insertCategory(CategoryDo categoryDo);
+
 }

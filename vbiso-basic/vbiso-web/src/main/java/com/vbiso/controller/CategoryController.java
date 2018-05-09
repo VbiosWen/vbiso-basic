@@ -2,6 +2,7 @@ package com.vbiso.controller;
 
 import com.vbiso.domain.CategoryDo;
 import com.vbiso.domain.UserDo;
+import com.vbiso.form.CategoryForm;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.CategoryService;
 import com.vbiso.utils.UserLoginUtil;
@@ -9,6 +10,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,6 +33,21 @@ public class CategoryController {
   public ServiceResult<List<CategoryDo>> selectAllCategory(HttpServletRequest request){
     UserDo userLoginInfo = UserLoginUtil.getUserLoginInfo(request);
     ServiceResult<List<CategoryDo>> result= categoryService.selectCatList(userLoginInfo.getUserId());
+    return result;
+  }
+
+  @RequestMapping(value = "/addCategory")
+  public String addCategoty(){
+    return "addCategory";
+  }
+
+  @RequestMapping(value = "/addCategory.json")
+  @ResponseBody
+  public ServiceResult<Integer> addCategoryJson(@RequestBody CategoryForm categoryForm){
+    CategoryDo categoryDo = new CategoryDo();
+    categoryDo.setUserId(categoryForm.getUserId());
+    categoryDo.setCategoryDesc(categoryForm.getCategoryData());
+    ServiceResult<Integer> result = categoryService.insertCategory(categoryDo);
     return result;
   }
 

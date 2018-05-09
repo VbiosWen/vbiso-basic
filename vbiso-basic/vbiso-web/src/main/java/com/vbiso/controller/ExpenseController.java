@@ -79,4 +79,9 @@ public class ExpenseController {
     return result;
   }
 
+  @RequestMapping(value = "/expensesCount")
+  public String expensesCount(){
+    return "expensecount";
+  }
+
 }

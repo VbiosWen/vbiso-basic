@@ -28,7 +28,7 @@
     WHERE
     user_mobile=#{userMobile}
     AND
-    user_password=#{password}
+    user_password=#{userPassword}
   </select>
 
   <select id="getUserInfo" parameterType="long" resultMap="UserResult">

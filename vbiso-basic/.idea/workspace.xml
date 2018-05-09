@@ -7,26 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90648513-17b1-4a5d-9689-1c382029ab06" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/IdUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/UserForm.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/DateUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/EveryIncomeDo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountDo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountQueryDo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCategoryDo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountDo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountQueryDo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/result/IncomeCategoryResult.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/result/IncomeEveryCatResult.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/AutoConfig.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/CategoryForm.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/IncomeCountForm.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addCategory.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expensecount.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/incomecount.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/static/js/getDayOfYear.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/UserDao.java" afterPath="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/UserDao.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/IncomeDao.java" afterPath="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/IncomeDao.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/ExpensesMapper.xml" afterPath="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/ExpensesMapper.xml" />
       <change beforePath="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/IncomeMapper.xml" afterPath="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/IncomeMapper.xml" />
       <change beforePath="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/UserMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/IncomoTest.java" afterPath="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/IncomoTest.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java" afterPath="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/UserDo.java" afterPath="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/UserDo.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/CategoryService.java" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/CategoryService.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/IncomeService.java" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/IncomeService.java" />
       <change beforePath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/UserService.java" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/UserService.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/CategoryServiceImpl.java" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/CategoryServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/IncomeServiceImpl.java" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/IncomeServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/vbiso-service/src/main/resources/service-trans.xml" afterPath="$PROJECT_DIR$/vbiso-service/src/main/resources/service-trans.xml" />
+      <change beforePath="$PROJECT_DIR$/vbiso-service/src/test/java/com/vbiso/service/test/UserServiceTest.java" afterPath="$PROJECT_DIR$/vbiso-service/src/test/java/com/vbiso/service/test/UserServiceTest.java" />
+      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/CategoryController.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/CategoryController.java" />
       <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/ExpenseController.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/ExpenseController.java" />
       <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java" />
       <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java" />
       <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/filter/LoginFilter.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/filter/LoginFilter.java" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/ExpenseForm.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/ExpenseForm.java" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/IncomeForm.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/IncomeForm.java" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addExpense.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addExpense.jsp" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addIncome.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addIncome.jsp" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expense.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expense.jsp" />
+      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/utils/UserLoginUtil.java" afterPath="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/utils/UserLoginUtil.java" />
       <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/userInfo.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/userInfo.jsp" />
+      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
+      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/vbiso-service/target/" />
@@ -110,113 +130,174 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java">
+      <file leaf-file-name="incomecount.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/incomecount.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
+            <state relative-caret-position="176">
+              <caret line="123" column="5" lean-forward="true" selection-start-line="58" selection-start-column="3" selection-end-line="123" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/UserService.java">
+      <file leaf-file-name="IncomeMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/IncomeMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="26" column="55" lean-forward="false" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1920">
-              <caret line="141" column="47" lean-forward="false" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
+            <state relative-caret-position="266">
+              <caret line="160" column="11" lean-forward="true" selection-start-line="130" selection-start-column="2" selection-end-line="160" selection-end-column="11" />
               <folding>
-                <marker date="1525175067264" expanded="true" signature="3674:3696" ph="..." />
+                <element signature="e#2667#2671#0" expanded="true" />
+                <element signature="e#2755#2759#0" expanded="true" />
+                <element signature="e#3198#3202#0" expanded="true" />
+                <element signature="e#3331#3335#0" expanded="true" />
+                <element signature="e#3924#3928#0" expanded="true" />
+                <element signature="e#4057#4061#0" expanded="true" />
+                <element signature="e#4502#4506#0" expanded="true" />
+                <element signature="e#4577#4581#0" expanded="true" />
+                <marker date="1525855046077" expanded="true" signature="1345:1435" ph="SELECT FROM income" />
+                <marker date="1525855046077" expanded="true" signature="1511:1712" ph="insert into income" />
+                <marker date="1525855046077" expanded="true" signature="1793:1966" ph="UPDATE income... " />
+                <marker date="1525855046077" expanded="true" signature="2036:2094" ph="SELECT FROM income" />
+                <marker date="1525855046077" expanded="true" signature="2036:2410" ph="SELECT FROM income" />
+                <marker date="1525855046077" expanded="true" signature="2535:2562" ph="SELECT count... income" />
+                <marker date="1525855046077" expanded="true" signature="3020:3075" ph="SELECT user_... income" />
+                <marker date="1525855046077" expanded="true" signature="3020:3081" ph="SELECT user_... income" />
+                <marker date="1525855046077" expanded="true" signature="3540:3575" ph="SELECT sum(i... income" />
+                <marker date="1525855046077" expanded="true" signature="3540:3576" ph="SELECT sum(i... income" />
+                <marker date="1525855046077" expanded="true" signature="3540:3607" ph="SELECT sum(i... income" />
+                <marker date="1525855046077" expanded="true" signature="3741:3807" ph="SELECT FROM income" />
+                <marker date="1525855046077" expanded="true" signature="4351:4414" ph="SELECT FROM income" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/UserServiceImpl.java">
+      <file leaf-file-name="IncomeDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/IncomeDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="47" column="8" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            <state relative-caret-position="236">
+              <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/UserDo.java">
+      <file leaf-file-name="CategoryMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/CategoryMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
+            <state relative-caret-position="-120">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="49" />
+              <folding>
+                <marker date="1524810210500" expanded="true" signature="629:748" ph="INSERT INTO category... " />
+                <marker date="1524810210500" expanded="true" signature="849:947" ph="SELECT FROM category" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpensesMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/ExpensesMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="126" column="28" lean-forward="false" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+              <folding>
+                <element signature="e#3207#3211#0" expanded="true" />
+                <element signature="e#3362#3366#0" expanded="true" />
+                <element signature="e#3866#3870#0" expanded="true" />
+                <element signature="e#4021#4025#0" expanded="true" />
+                <element signature="e#4534#4538#0" expanded="true" />
+                <element signature="e#4631#4635#0" expanded="true" />
+                <marker date="1525858952564" expanded="true" signature="1152:1262" ph="SELECT FROM expenses" />
+                <marker date="1525858952564" expanded="true" signature="1397:1869" ph="SELECT FROM expenses" />
+                <marker date="1525858952564" expanded="true" signature="2483:2546" ph="SELECT sum(e... expenses" />
+                <marker date="1525858952564" expanded="true" signature="2630:2849" ph="INSERT INTO expenses... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryDo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/CategoryDo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#511#512#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="false">
-        <entry file="das://table:/d1fce46a/9a8f26cd-26f0-49d6-85b2-14ef622a255b/vbiso.users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/UserMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-              <folding>
-                <marker date="1525272519771" expanded="true" signature="878:1013" ph="SELECT FROM users" />
-                <marker date="1525272519771" expanded="true" signature="1103:1191" ph="SELECT FROM users" />
-                <marker date="1525272519771" expanded="true" signature="1287:1375" ph="SELECT FROM users" />
-                <marker date="1525272519771" expanded="true" signature="1459:1647" ph="INSERT INTO users... " />
-                <marker date="1525272519771" expanded="true" signature="1732:1913" ph="UPDATE users... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDaoTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console.sql">
+      <file leaf-file-name="ExpensesCountDo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountDo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="44" lean-forward="true" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="124">
+              <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding>
+                <element signature="e#309#310#0" expanded="true" />
+                <element signature="e#363#364#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+                <element signature="e#497#498#0" expanded="true" />
+                <element signature="e#527#528#0" expanded="true" />
+                <element signature="e#562#563#0" expanded="true" />
+                <element signature="e#591#592#0" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/UserDao.java">
+      <file leaf-file-name="IncomeCountDo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountDo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="29" column="78" lean-forward="false" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
+            <state relative-caret-position="180">
+              <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+              <folding>
+                <element signature="e#266#267#0" expanded="true" />
+                <element signature="e#289#290#0" expanded="true" />
+                <element signature="e#329#330#0" expanded="true" />
+                <element signature="e#359#360#0" expanded="true" />
+                <element signature="e#394#395#0" expanded="true" />
+                <element signature="e#421#422#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpensesCountQueryDo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountQueryDo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+              <folding>
+                <element signature="e#280#281#0" expanded="true" />
+                <element signature="e#318#319#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#372#373#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+                <element signature="e#426#427#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#572#573#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IncomeCountQueryDo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountQueryDo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -252,57 +333,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/CategoryMappper.xml" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/CategoryMapper.xml" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/echarts.jsp" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/echarts.jsp" />
-        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/IncomeService.java" />
-        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeDo.java" />
-        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/ExpensesServiceImpl.java" />
-        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/IncomeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
-        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/UserDo.java" />
-        <option value="$PROJECT_DIR$/vbiso-service/src/main/resources/log4j.xml" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/IncomeDao.java" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/IncomoTest.java" />
-        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/UserInfo.java" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/ExpensesMapper.xml" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/ExpenseTest.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_2.sql" />
-        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/NetIncome.java" />
-        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/NetIncomeDo.java" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/CategoryDao.java" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/ExpensesDao.java" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/NetincomeDao.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/vbiso-timejob/pom.xml" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/NetincomeMapper.xml" />
-        <option value="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/LoginUtil.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/utils/UserLoginUtil.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/CategoryController.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addIncome.jsp" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/filter/LoginFilter.java" />
         <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/IncomeForm.java" />
         <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addExpense.jsp" />
         <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/ExpenseForm.java" />
         <option value="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/IdUtil.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/ExpenseController.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java" />
-        <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/IncomeMapper.xml" />
         <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expense.jsp" />
         <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/userInfo.jsp" />
         <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/UserForm.java" />
         <option value="$PROJECT_DIR$/vbiso-service/src/main/resources/service-trans.xml" />
         <option value="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/UserService.java" />
-        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console.sql" />
+        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/UserDo.java" />
         <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountQueryDo.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/IncomeCountForm.java" />
+        <option value="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_3.sql" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/CategoryForm.java" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/CategoryService.java" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/CategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addCategory.jsp" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/CategoryController.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/AutoConfig.java" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/utils/UserLoginUtil.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/login.jsp" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/UserService.java" />
+        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountDo.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_4.sql" />
+        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCategoryDo.java" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/result/IncomeCategoryResult.java" />
+        <option value="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/DateUtil.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/static/js/getDayOfYear.js" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/test/java/com/vbiso/service/test/UserServiceTest.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/filter/LoginFilter.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console.sql" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/result/IncomeEveryCatResult.java" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/IncomeService.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java" />
+        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/EveryIncomeDo.java" />
+        <option value="$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/IncomeDao.java" />
+        <option value="$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/IncomeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/IncomoTest.java" />
+        <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/IncomeMapper.xml" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/incomecount.jsp" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/ExpenseController.java" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expensecount.jsp" />
+        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountQueryDo.java" />
+        <option value="$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountDo.java" />
+        <option value="$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/ExpensesMapper.xml" />
       </list>
     </option>
   </component>
@@ -348,7 +429,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="827" />
@@ -389,7 +470,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -431,6 +511,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="vbiso" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso" type="462c0819:PsiDirectoryNode" />
+              <item name="result" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
@@ -614,7 +704,41 @@
               <item name="vbiso-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="result" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
@@ -732,6 +856,34 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="echats" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vbiso-basic" type="462c0819:PsiDirectoryNode" />
+              <item name="vbiso-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -801,12 +953,57 @@
               <item name="aop" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-aop:4.3.14.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-aop-4.3.14.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="aop" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.14.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.14.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-4.3.14.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.14.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-4.3.14.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.14.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-4.3.14.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vbiso-basic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.14.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-4.3.14.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -817,6 +1014,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="SearchEverywhereHistoryKey" value="IncomeCountDo&#9;FILE&#9;file:///Users/vbisowen/Desktop/vbiso/vbiso-basic/vbiso-basic/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountDo.java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -851,25 +1049,6 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="IdUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.vbiso.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.vbiso.utils.IdUtil" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="vbiso-common" />
-      <envs />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -884,32 +1063,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="ExpenseTest.testSum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.vbiso.dao.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="vbiso-dao" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.vbiso.dao.test" />
-      <option name="MAIN_CLASS_NAME" value="com.vbiso.dao.test.ExpenseTest" />
-      <option name="METHOD_NAME" value="testSum" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="IncomoTest.testSumIncome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IncomoTest.testEveryIncoem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.vbiso.dao.test.*" />
@@ -921,7 +1075,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.vbiso.dao.test" />
       <option name="MAIN_CLASS_NAME" value="com.vbiso.dao.test.IncomoTest" />
-      <option name="METHOD_NAME" value="testSumIncome" />
+      <option name="METHOD_NAME" value="testEveryIncoem" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -934,7 +1088,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="UserDaoTest.insertnetincome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IncomoTest.testSelectCategoryDayIncome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.vbiso.dao.test.*" />
@@ -945,8 +1099,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.vbiso.dao.test" />
-      <option name="MAIN_CLASS_NAME" value="com.vbiso.dao.test.UserDaoTest" />
-      <option name="METHOD_NAME" value="insertnetincome" />
+      <option name="MAIN_CLASS_NAME" value="com.vbiso.dao.test.IncomoTest" />
+      <option name="METHOD_NAME" value="testSelectCategoryDayIncome" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -959,19 +1113,69 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="UserDaoTest.testGetByUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.testGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.vbiso.dao.test.*" />
+          <option name="PATTERN" value="com.vbiso.service.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="vbiso-dao" />
+      <module name="vbiso-service" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.vbiso.dao.test" />
-      <option name="MAIN_CLASS_NAME" value="com.vbiso.dao.test.UserDaoTest" />
-      <option name="METHOD_NAME" value="testGetByUserId" />
+      <option name="PACKAGE_NAME" value="com.vbiso.service.test" />
+      <option name="MAIN_CLASS_NAME" value="com.vbiso.service.test.UserServiceTest" />
+      <option name="METHOD_NAME" value="testGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="UserServiceTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.vbiso.service.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="vbiso-service" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.vbiso.service.test" />
+      <option name="MAIN_CLASS_NAME" value="com.vbiso.service.test.UserServiceTest" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="UserServiceTest.testMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.vbiso.service.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="vbiso-service" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.vbiso.service.test" />
+      <option name="MAIN_CLASS_NAME" value="com.vbiso.service.test.UserServiceTest" />
+      <option name="METHOD_NAME" value="testMap" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1122,19 +1326,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Node.js.login.js" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.vbiso" />
-      <item index="2" class="java.lang.String" itemvalue="Application.IdUtil" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.UserDaoTest.testGetByUserId" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.IncomoTest.testSumIncome" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSum" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.UserDaoTest.insertnetincome" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.IncomoTest.testSelectCategoryDayIncome" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testLogin" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testMap" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testGet" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.IncomoTest.testEveryIncoem" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.IdUtil" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserDaoTest.insertnetincome" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ExpenseTest.testSum" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.IncomoTest.testSumIncome" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.UserDaoTest.testGetByUserId" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.IncomoTest.testEveryIncoem" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.IncomoTest.testSelectCategoryDayIncome" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testMap" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testGet" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -1168,48 +1372,49 @@
       <workItem from="1523964450052" duration="6965000" />
       <workItem from="1524026042747" duration="119121000" />
       <workItem from="1525236057333" duration="4243000" />
-      <workItem from="1525267663999" duration="5358000" />
+      <workItem from="1525267663999" duration="5478000" />
+      <workItem from="1525317153366" duration="27146000" />
+      <workItem from="1525606716566" duration="52878000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExpenseTest_testSum - 2018.05.01 at 17h 31m 31s.xml">
-      <configuration name="ExpenseTest.testSum" configurationId="JUnit" />
+    <history-entry file="IncomoTest_testEveryIncoem - 2018.05.09 at 16h 32m 07s.xml">
+      <configuration name="IncomoTest.testEveryIncoem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ExpenseTest_testSum - 2018.05.01 at 17h 31m 39s.xml">
-      <configuration name="ExpenseTest.testSum" configurationId="JUnit" />
+    <history-entry file="IncomoTest_testEveryIncoem - 2018.05.09 at 16h 35m 30s.xml">
+      <configuration name="IncomoTest.testEveryIncoem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IncomoTest_testSumIncome - 2018.05.01 at 13h 01m 00s.xml">
-      <configuration name="IncomoTest.testSumIncome" configurationId="JUnit" />
+    <history-entry file="IncomoTest_testEveryIncoem - 2018.05.09 at 16h 36m 44s.xml">
+      <configuration name="IncomoTest.testEveryIncoem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IncomoTest_testSumIncome - 2018.05.01 at 13h 02m 03s.xml">
-      <configuration name="IncomoTest.testSumIncome" configurationId="JUnit" />
+    <history-entry file="IncomoTest_testEveryIncoem - 2018.05.09 at 16h 37m 29s.xml">
+      <configuration name="IncomoTest.testEveryIncoem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_insertnetincome - 2018.05.01 at 20h 23m 19s.xml">
-      <configuration name="UserDaoTest.insertnetincome" configurationId="JUnit" />
+    <history-entry file="IncomoTest_testSelectCategoryDayIncome - 2018.05.08 at 20h 48m 08s.xml">
+      <configuration name="IncomoTest.testSelectCategoryDayIncome" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_insertnetincome - 2018.05.01 at 20h 24m 37s.xml">
-      <configuration name="UserDaoTest.insertnetincome" configurationId="JUnit" />
+    <history-entry file="UserServiceTest_testGet - 2018.05.08 at 14h 59m 40s.xml">
+      <configuration name="UserServiceTest.testGet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_insertnetincome - 2018.05.01 at 20h 25m 03s.xml">
-      <configuration name="UserDaoTest.insertnetincome" configurationId="JUnit" />
+    <history-entry file="UserServiceTest_testGet - 2018.05.08 at 16h 00m 08s.xml">
+      <configuration name="UserServiceTest.testGet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_insertnetincome - 2018.05.01 at 20h 27m 15s.xml">
-      <configuration name="UserDaoTest.insertnetincome" configurationId="JUnit" />
+    <history-entry file="UserServiceTest_testGet - 2018.05.08 at 16h 00m 30s.xml">
+      <configuration name="UserServiceTest.testGet" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_insertnetincome - 2018.05.01 at 20h 30m 59s.xml">
-      <configuration name="UserDaoTest.insertnetincome" configurationId="JUnit" />
+    <history-entry file="UserServiceTest_testLogin - 2018.05.08 at 15h 32m 24s.xml">
+      <configuration name="UserServiceTest.testLogin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_insertnetincome - 2018.05.01 at 20h 31m 58s.xml">
-      <configuration name="UserDaoTest.insertnetincome" configurationId="JUnit" />
+    <history-entry file="UserServiceTest_testMap - 2018.05.08 at 17h 08m 04s.xml">
+      <configuration name="UserServiceTest.testMap" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212627000" />
+    <option name="totallyTimeSpent" value="292771000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="827" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="827" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1227,13 +1432,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5103093" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32474965" sideWeight="0.48195878" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.48195878" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27038628" sideWeight="0.51804125" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1244,6 +1448,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5103093" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1253,16 +1458,16 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.4945355" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892704" sideWeight="0.4945355" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.48969072" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46994534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46994534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1270,12 +1475,13 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5103093" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2846924" sideWeight="0.48195878" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.48195878" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27038628" sideWeight="0.51804125" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1293,7 +1499,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/IncomoTest.java</url>
-          <line>64</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -1316,49 +1522,61 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/ExpenseController.java</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/ExpensesServiceImpl.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/IncomoTest.java</url>
-          <line>76</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java</url>
-          <line>92</line>
+          <line>93</line>
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java</url>
-          <line>82</line>
+          <line>83</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java</url>
-          <line>68</line>
+          <url>file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java</url>
+          <line>59</line>
           <properties />
-          <option name="timeStamp" value="55" />
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/IdUtil.java</url>
-          <line>17</line>
+          <url>file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/CategoryController.java</url>
+          <line>46</line>
           <properties />
-          <option name="timeStamp" value="57" />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/vbiso-service/src/test/java/com/vbiso/service/test/UserServiceTest.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/vbiso-service/src/test/java/com/vbiso/service/test/UserServiceTest.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java</url>
+          <line>106</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/IncomeServiceImpl.java</url>
+          <line>101</line>
+          <properties />
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="61" />
+      <option name="time" value="94" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1368,6 +1586,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>request.getRequestURI()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>new SimpleDateFormat(&quot;yyyyMMddhhmmssSSS&quot;).format(new Date()).toString()</expression-string>
         <language-id>JAVA</language-id>
@@ -1407,114 +1630,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.14.RELEASE/spring-web-4.3.14.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/resources/vbiso-web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/resources/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/CategoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="87" lean-forward="false" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/ExpensesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="67" lean-forward="false" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/NetincomeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/RedisTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-timejob/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/NetincomeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <marker date="1525177906443" expanded="true" signature="771:867" ph="SELECT FROM NetIncome" />
-            <marker date="1525177906443" expanded="true" signature="958:1023" ph="SELECT sum(n... NetIncome" />
-            <marker date="1525177906443" expanded="true" signature="1101:1249" ph="INSERT INTO NetIncome... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d1fce46a/9a8f26cd-26f0-49d6-85b2-14ef622a255b/vbiso.NetIncome">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/NetIncomeDo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1523,29 +1638,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/LoginUtil.java" />
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/utils/UserLoginUtil.java">
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/UserLoginForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="62" lean-forward="false" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.14.RELEASE/spring-aop-4.3.14.RELEASE-sources.jar!/org/springframework/aop/support/AopUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="332" column="0" lean-forward="false" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addCategory.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="40" lean-forward="false" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.14.RELEASE/spring-web-4.3.14.RELEASE-sources.jar!/org/springframework/web/filter/OncePerRequestFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expense.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="162" column="7" lean-forward="false" selection-start-line="160" selection-start-column="4" selection-end-line="162" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/result/ServiceResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="131" column="26" lean-forward="false" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="143" lean-forward="false" selection-start-line="0" selection-start-column="143" selection-end-line="0" selection-end-column="143" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console_4.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1296#1297#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="44" column="52" lean-forward="false" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.14.RELEASE/spring-aop-4.3.14.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/ExpenseForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/static/js/dateformat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/static/js/getDayOfYear.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/utils/UserLoginUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/test/java/com/vbiso/service/test/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="54" column="57" lean-forward="false" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/ExpensesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/echats/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="23083" column="16" lean-forward="false" selection-start-line="23083" selection-start-column="16" selection-end-line="23083" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/filter/LoginFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="36" column="79" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="79" />
+        <state relative-caret-position="-184">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1557,17 +1861,190 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/IncomeForm.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="30">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addExpense.jsp">
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/result/IncomeEveryCatResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="5" lean-forward="false" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+        <state relative-caret-position="240">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/result/IncomeCategoryResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1014">
+          <caret line="83" column="19" lean-forward="false" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCategoryDo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/EveryIncomeDo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#289#290#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/IncomeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/IncomeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/IncomoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="129" column="22" lean-forward="false" selection-start-line="129" selection-start-column="22" selection-end-line="129" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="115" column="41" lean-forward="false" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2441#2442#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#3842#3843#0" expanded="true" />
+            <element signature="e#3872#3873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/ExpenseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="e#3119#3120#0" expanded="true" />
+            <element signature="e#3150#3151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="56" column="42" lean-forward="true" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+          <folding>
+            <marker date="1525857318368" expanded="true" signature="4160:4182" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expensecount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="102" column="20" lean-forward="true" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountQueryDo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1580,50 +2057,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/ExpenseController.java">
+    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountQueryDo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IncomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="70" column="44" lean-forward="false" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d1fce46a/9a8f26cd-26f0-49d6-85b2-14ef622a255b/vbiso.expenses">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/IdUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="39" column="3" lean-forward="false" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+        <state relative-caret-position="190">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/incomecount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="123" column="5" lean-forward="true" selection-start-line="58" selection-start-column="3" selection-end-line="123" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/CategoryMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-120">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="49" />
           <folding>
             <marker date="1524810210500" expanded="true" signature="629:748" ph="INSERT INTO category... " />
@@ -1632,224 +2102,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/ExpensesMapper.xml">
+    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/IncomeCountDo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="72" column="18" lean-forward="false" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+        <state relative-caret-position="180">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
           <folding>
-            <marker date="1525167087090" expanded="true" signature="997:1107" ph="SELECT FROM expenses" />
-            <marker date="1525167087090" expanded="true" signature="1242:1714" ph="SELECT FROM expenses" />
-            <marker date="1525167087090" expanded="true" signature="1843:1872" ph="SELECT count... expenses" />
-            <marker date="1525167087090" expanded="true" signature="2328:2391" ph="SELECT SUM (... expenses" />
-            <marker date="1525167087090" expanded="true" signature="2475:2694" ph="INSERT INTO expenses... " />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/IncomeMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="71" column="22" lean-forward="false" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        <state relative-caret-position="266">
+          <caret line="160" column="11" lean-forward="true" selection-start-line="130" selection-start-column="2" selection-end-line="160" selection-end-column="11" />
           <folding>
-            <marker date="1525268186200" expanded="true" signature="921:1011" ph="SELECT FROM income" />
-            <marker date="1525268186200" expanded="true" signature="1087:1288" ph="insert into income" />
-            <marker date="1525268186200" expanded="true" signature="1369:1528" ph="UPDATE income... " />
-            <marker date="1525268186200" expanded="true" signature="1598:1656" ph="SELECT FROM income" />
-            <marker date="1525268186200" expanded="true" signature="1598:1972" ph="SELECT FROM income" />
-            <marker date="1525268186200" expanded="true" signature="2097:2124" ph="SELECT count... income" />
-            <marker date="1525268186200" expanded="true" signature="2545:2612" ph="SELECT sum(i... income" />
+            <element signature="e#2667#2671#0" expanded="true" />
+            <element signature="e#2755#2759#0" expanded="true" />
+            <element signature="e#3198#3202#0" expanded="true" />
+            <element signature="e#3331#3335#0" expanded="true" />
+            <element signature="e#3924#3928#0" expanded="true" />
+            <element signature="e#4057#4061#0" expanded="true" />
+            <element signature="e#4502#4506#0" expanded="true" />
+            <element signature="e#4577#4581#0" expanded="true" />
+            <marker date="1525855046077" expanded="true" signature="1345:1435" ph="SELECT FROM income" />
+            <marker date="1525855046077" expanded="true" signature="1511:1712" ph="insert into income" />
+            <marker date="1525855046077" expanded="true" signature="1793:1966" ph="UPDATE income... " />
+            <marker date="1525855046077" expanded="true" signature="2036:2094" ph="SELECT FROM income" />
+            <marker date="1525855046077" expanded="true" signature="2036:2410" ph="SELECT FROM income" />
+            <marker date="1525855046077" expanded="true" signature="2535:2562" ph="SELECT count... income" />
+            <marker date="1525855046077" expanded="true" signature="3020:3075" ph="SELECT user_... income" />
+            <marker date="1525855046077" expanded="true" signature="3020:3081" ph="SELECT user_... income" />
+            <marker date="1525855046077" expanded="true" signature="3540:3575" ph="SELECT sum(i... income" />
+            <marker date="1525855046077" expanded="true" signature="3540:3576" ph="SELECT sum(i... income" />
+            <marker date="1525855046077" expanded="true" signature="3540:3607" ph="SELECT sum(i... income" />
+            <marker date="1525855046077" expanded="true" signature="3741:3807" ph="SELECT FROM income" />
+            <marker date="1525855046077" expanded="true" signature="4351:4414" ph="SELECT FROM income" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp">
+    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/ExpensesMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="34" column="10" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="34" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/addIncome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414">
-          <caret line="78" column="51" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="78" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/expense.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="146" column="16" lean-forward="false" selection-start-line="146" selection-start-column="16" selection-end-line="146" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/userInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="172" column="15" lean-forward="false" selection-start-line="172" selection-start-column="15" selection-end-line="172" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/ExpenseForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state relative-caret-position="561">
+          <caret line="126" column="28" lean-forward="false" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
           <folding>
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#3207#3211#0" expanded="true" />
+            <element signature="e#3362#3366#0" expanded="true" />
+            <element signature="e#3866#3870#0" expanded="true" />
+            <element signature="e#4021#4025#0" expanded="true" />
+            <element signature="e#4534#4538#0" expanded="true" />
+            <element signature="e#4631#4635#0" expanded="true" />
+            <marker date="1525858952564" expanded="true" signature="1152:1262" ph="SELECT FROM expenses" />
+            <marker date="1525858952564" expanded="true" signature="1397:1869" ph="SELECT FROM expenses" />
+            <marker date="1525858952564" expanded="true" signature="2483:2546" ph="SELECT sum(e... expenses" />
+            <marker date="1525858952564" expanded="true" signature="2630:2849" ph="INSERT INTO expenses... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/form/UserForm.java">
+    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/IncomeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        <state relative-caret-position="236">
+          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/ExpensesCountDo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.14.RELEASE/spring-aop-4.3.14.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/FieldMappingUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/resources/service-trans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="141" column="47" lean-forward="false" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
-          <folding>
-            <marker date="1525175067264" expanded="true" signature="3674:3696" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="26" column="55" lean-forward="false" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-web/src/main/java/com/vbiso/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="75" column="24" lean-forward="false" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/java/com/vbiso/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="29" column="78" lean-forward="false" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a8f26cd-26f0-49d6-85b2-14ef622a255b/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="44" lean-forward="true" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d1fce46a/9a8f26cd-26f0-49d6-85b2-14ef622a255b/vbiso.users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-service/src/main/java/com/vbiso/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="47" column="8" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-domain/src/main/java/com/vbiso/domain/UserDo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vbiso-dao/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding>
-            <marker date="1525272519771" expanded="true" signature="878:1013" ph="SELECT FROM users" />
-            <marker date="1525272519771" expanded="true" signature="1103:1191" ph="SELECT FROM users" />
-            <marker date="1525272519771" expanded="true" signature="1287:1375" ph="SELECT FROM users" />
-            <marker date="1525272519771" expanded="true" signature="1459:1647" ph="INSERT INTO users... " />
-            <marker date="1525272519771" expanded="true" signature="1732:1913" ph="UPDATE users... " />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
           </folding>
         </state>
       </provider>

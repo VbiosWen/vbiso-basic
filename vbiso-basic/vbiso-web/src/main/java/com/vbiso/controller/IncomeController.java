@@ -1,18 +1,25 @@
 package com.vbiso.controller;
 
+import com.vbiso.domain.IncomeCountDo;
+import com.vbiso.domain.IncomeCountQueryDo;
 import com.vbiso.domain.IncomeDo;
 import com.vbiso.domain.PageDo;
 import com.vbiso.domain.UserDo;
+import com.vbiso.form.IncomeCountForm;
 import com.vbiso.form.IncomeForm;
 import com.vbiso.form.PageForm;
 import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.result.LayUIResult;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.IncomeService;
+import com.vbiso.service.result.IncomeCategoryResult;
+import com.vbiso.service.result.IncomeEveryCatResult;
+import com.vbiso.utils.DateUtil;
 import com.vbiso.utils.IdUtil;
-import com.vbiso.utils.JsonUtil;
 import com.vbiso.utils.UserLoginUtil;
+import java.time.Instant;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -76,6 +83,46 @@ public class IncomeController {
     incomeDo.setCategoryId(incomeForm.getCategory());
     ServiceResult<Integer> result = incomeService.addIncome(incomeDo);
     return result;
+  }
+
+  @RequestMapping(value = "/selectIncomeDay")
+  @ResponseBody
+  public ServiceResult<List<IncomeCountDo>>selectIncomeDay(@RequestBody IncomeCountForm incomeCountForm){
+    IncomeCountQueryDo incomeCountQueryDo = new IncomeCountQueryDo();
+    incomeCountQueryDo.setUserId(incomeCountForm.getUserId());
+    incomeCountQueryDo.setStart(incomeCountForm.getStart());
+    incomeCountQueryDo.setEnd(incomeCountForm.getEnd());
+    ServiceResult<List<IncomeCountDo>> dayIncome = incomeService.getDayIncome(incomeCountQueryDo);
+    return dayIncome;
+  }
+
+  @RequestMapping(value = "/incomeCount")
+  public String returnIncomeCount(){
+    return "incomecount";
+  }
+
+  @RequestMapping(value = "/incomeCategory")
+  @ResponseBody
+  public ServiceResult<Map<String,List<IncomeCategoryResult>>> getIncomeCategory(@RequestBody IncomeCountForm incomeCountForm){
+    IncomeCountQueryDo incomeCountQueryDo = new IncomeCountQueryDo();
+    incomeCountQueryDo.setUserId(incomeCountForm.getUserId());
+    incomeCountQueryDo.setStart(incomeCountForm.getStart());
+    incomeCountQueryDo.setEnd(incomeCountForm.getEnd());
+    ServiceResult<Map<String, List<IncomeCategoryResult>>> incomeCategory = incomeService
+        .getIncomeCategory(incomeCountQueryDo);
+    return incomeCategory;
+  }
+
+  @RequestMapping(value = "/everyCategory")
+  @ResponseBody
+  public ServiceResult<List<IncomeEveryCatResult>> everyCategory(@RequestBody IncomeCountForm incomeCountForm){
+    IncomeCountQueryDo incomeCountQueryDo=new IncomeCountQueryDo();
+    incomeCountQueryDo.setEnd(incomeCountForm.getEnd());
+    incomeCountQueryDo.setStart(incomeCountForm.getStart());
+    incomeCountQueryDo.setUserId(incomeCountForm.getUserId());
+    ServiceResult<List<IncomeEveryCatResult>> everyCatIncome = incomeService
+        .getEveryCatIncome(incomeCountQueryDo);
+    return everyCatIncome;
   }
 
 }

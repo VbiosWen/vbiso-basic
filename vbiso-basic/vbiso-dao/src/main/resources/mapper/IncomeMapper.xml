@@ -20,6 +20,25 @@
         income_desc
     </sql>
 
+  <sql id="incomeCategoryColumn">
+    user_id AS userId,
+    category_id AS categoryId,
+    sum(income_data) AS incomeData,
+    income_date AS incomeDate
+  </sql>
+
+  <sql id="incomeCountColumn">
+    user_id AS userId,
+    sum(income_data) AS incomeData,
+    income_date AS incomeDate
+  </sql>
+
+  <sql id="everyIncomeColumn">
+    user_id AS userId,
+    category_id AS categoryId,
+    sum(income_data) AS incomeData
+  </sql>
+
   <select id="getByUserId" parameterType="long" resultMap="IncomeResult">
     SELECT
     <include refid="incomeColumn"/>
@@ -38,7 +57,7 @@
   <update id="updateIncome" parameterType="java.util.List">
     UPDATE income
     SET
-    <foreach collection="list" item="fieldDo" index="index">
+    <foreach collection="list" item="fieldDo" index="index" separator=",">
       ${key}=#{fieldDo.value}
     </foreach>
     WHERE
@@ -87,10 +106,58 @@
         </where>
   </select>
 
+  <select id="getDayIncome" parameterType="com.vbiso.domain.IncomeCountQueryDo" resultType="incomeCountDo">
+   SELECT
+   <include refid="incomeCountColumn"/>
+   FROM income
+    <where>
+      user_id=#{userId}
+      <if test="start!=0">
+        AND to_days(from_unixtime(income_date/1000)) &gt;=to_days(from_unixtime(#{start}/1000))
+      </if>
+      <if test="end!=0">
+        AND to_days(from_unixtime(income_date/1000)) &lt;=to_days(from_unixtime(#{end}/1000))
+      </if>
+      GROUP BY to_days(from_unixtime(income_date/1000))
+    </where>
+  </select>
+
   <select id="getSumIncome" parameterType="long" resultType="double">
     SELECT sum(income_data) FROM income
     WHERE
     user_id=#{userId}
+  </select>
+
+  <select id="getCategoryIncome" parameterType="com.vbiso.domain.IncomeCountQueryDo" resultType="incomeCategoryDo">
+    SELECT
+    <include refid="incomeCategoryColumn"/>
+    FROM income
+    <where>
+      user_id=#{userId}
+      <if test="start!=0">
+        AND to_days(from_unixtime(income_date/1000)) &gt;=to_days(from_unixtime(#{start}/1000))
+      </if>
+      <if test="end!=0">
+        AND to_days(from_unixtime(income_date/1000)) &lt;=to_days(from_unixtime(#{end}/1000))
+      </if>
+      GROUP BY to_days(from_unixtime(income_date/1000)),category_id ORDER BY income_date ASC
+    </where>
+  </select>
+
+  <select id="getEveryCategoryIncome" parameterType="com.vbiso.domain.IncomeCountQueryDo" resultType="everyIncomeDo">
+    SELECT
+    <include refid="everyIncomeColumn"/>
+    FROM income
+    <where>
+      user_id=#{userId}
+      <if test="start!=0">
+        AND income_date &gt;=#{start}
+      </if>
+      <if test="end!=0">
+        AND income_date &lt;=#{end}
+      </if>
+      GROUP BY category_id
+    </where>
   </select>
 
 

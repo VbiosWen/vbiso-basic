@@ -19,6 +19,11 @@
         expenses_desc,
         category_id
     </sql>
+    <sql id="expensesCountColumn">
+        user_id AS userId,
+        expenses_date AS expensesDate,
+        sum(expenses_data) AS expensesData
+    </sql>
 
     <select id="getByUserId" parameterType="long" resultMap="expensesResult">
         SELECT
@@ -79,5 +84,55 @@
         VALUES
         (#{expensesId},#{userId},#{categoryId},#{expensesDate},#{expensesData},#{expensesDesc})
     </insert>
+
+    <select id="getDayExpenses" parameterType="com.vbiso.domain.ExpensesCountQueryDo" resultType="expensesCountDo">
+        SELECT
+        <include refid="expensesCountColumn"/>
+        FROM expenses
+        <where>
+            user_id=#{userId}
+            <if test="start!=0">
+                AND to_days(from_unixtime(expenses_date/1000)) &gt;=to_days(from_unixtime(#{start}/1000))
+            </if>
+            <if test="end!=0">
+                AND to_days(from_unixtime(expenses_date/1000)) &lt;=to_days(from_unixtime(#{end}/1000))
+            </if>
+            GROUP BY to_days(from_unixtime(expenses_date/1000))
+        </where>
+    </select>
+
+    <select id="getCategoryExpenses" parameterType="com.vbiso.domain.ExpensesCountQueryDo" resultType="expensesCategoryDo">
+        SELECT
+        <include refid="incomeCategoryColumn"/>
+        FROM income
+        <where>
+            user_id=#{userId}
+            <if test="start!=0">
+                AND to_days(from_unixtime(expenses_date/1000)) &gt;=to_days(from_unixtime(#{start}/1000))
+            </if>
+            <if test="end!=0">
+                AND to_days(from_unixtime(expenses_date/1000)) &lt;=to_days(from_unixtime(#{end}/1000))
+            </if>
+            GROUP BY to_days(from_unixtime(expenses_date/1000)),category_id ORDER BY expenses_date ASC
+        </where>
+    </select>
+
+    <select id="getEveryCategoryExpenses" parameterType="com.vbiso.domain.ExpensesCountQueryDo" resultType="everyExpensesDo">
+        SELECT
+        <include refid="everyIncomeColumn"/>
+        FROM income
+        <where>
+            user_id=#{userId}
+            <if test="start!=0">
+                AND expenses_date &gt;=#{start}
+            </if>
+            <if test="end!=0">
+                AND expenses_date &lt;=#{end}
+            </if>
+            GROUP BY category_id
+        </where>
+    </select>
+
+
 
 </mapper>

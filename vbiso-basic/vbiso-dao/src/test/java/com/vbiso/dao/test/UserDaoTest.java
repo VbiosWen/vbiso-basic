@@ -12,6 +12,7 @@ import com.vbiso.mapping.FieldDo;
 import com.vbiso.utils.JsonUtil;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -48,7 +49,7 @@ public class UserDaoTest {
   public void testInsertUser() throws Exception {
     UserDo userDo = new UserDo();
     userDo.setUserId(1L);
-    userDo.setPassword("123456");
+    userDo.setUserPassword("123456");
     userDo.setModifyTime(System.currentTimeMillis());
     userDo.setUserMobile("15639114941");
     userDo.setCreatedTime(System.currentTimeMillis());
@@ -63,7 +64,7 @@ public class UserDaoTest {
     String password="123456";
     UserDo userDo = new UserDo();
     userDo.setUserId(userId);
-    userDo.setPassword(password);
+    userDo.setUserPassword(password);
     UserDo userDo1 = userDao.getByUserId(userDo);
     System.out.println(userDo1.getUserNick());
   }
@@ -82,7 +83,7 @@ public class UserDaoTest {
   public void testGetByUserId(){
     UserDo userDo = new UserDo();
     userDo.setUserMobile("15639114941");
-    userDo.setPassword("123456");
+    userDo.setUserPassword("123456");
     UserDo byUserId = userDao.getByUserId(userDo);
     System.out.println(JsonUtil.toJson(byUserId));
   }
@@ -97,6 +98,11 @@ public class UserDaoTest {
     netIncomeDo.setNetincomeId(System.currentTimeMillis());
     netIncomeDo.setNetincomeDate(System.currentTimeMillis());
     netincomeDao.insertNetincome(netIncomeDo);
+  }
+
+  @Test
+  public void test(){
+    System.out.println(new Date(1523333195156L));
   }
 
 

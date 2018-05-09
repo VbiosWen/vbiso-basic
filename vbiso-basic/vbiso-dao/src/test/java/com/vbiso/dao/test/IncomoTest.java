@@ -2,6 +2,10 @@ package com.vbiso.dao.test;
 
 import com.alibaba.druid.support.json.JSONUtils;
 import com.vbiso.dao.IncomeDao;
+import com.vbiso.domain.EveryIncomeDo;
+import com.vbiso.domain.IncomeCategoryDo;
+import com.vbiso.domain.IncomeCountDo;
+import com.vbiso.domain.IncomeCountQueryDo;
 import com.vbiso.domain.IncomeDo;
 import com.vbiso.domain.PageDo;
 import com.vbiso.pojo.IncomeExpensesQueryPojo;
@@ -76,6 +80,56 @@ public class IncomoTest {
   public void testSumIncome(){
     double sumIncome = incomeDao.getSumIncome(1L);
     System.out.println(sumIncome);
+  }
+
+  @Test
+  public void testSelectCategory(){
+    IncomeCountQueryDo incomeCountQueryDo = new IncomeCountQueryDo();
+    incomeCountQueryDo.setStart(1L);
+    incomeCountQueryDo.setEnd(System.currentTimeMillis());
+    incomeCountQueryDo.setUserId(1L);
+    List<IncomeCategoryDo> categoryIncome = incomeDao.getCategoryIncome(incomeCountQueryDo);
+    System.out.println(JsonUtil.toJson(categoryIncome));
+  }
+
+  @Test
+  public void testSelectDayIncome(){
+    IncomeCountQueryDo incomeCountQueryDo=new IncomeCountQueryDo();
+    incomeCountQueryDo.setUserId(1L);
+    incomeCountQueryDo.setStart(1L);
+    incomeCountQueryDo.setEnd(System.currentTimeMillis());
+    List<IncomeCountDo> dayIncome =
+        incomeDao.getDayIncome(incomeCountQueryDo);
+    System.out.println(JsonUtil.toJson(dayIncome));
+  }
+
+  @Test
+  public void testDouble(){
+    double data=100.0123214144142;
+    data=data*1000;
+    System.out.println(data);
+    System.out.println(data/1000);
+  }
+
+  @Test
+  public void testSelectCategoryDayIncome(){
+    IncomeCountQueryDo incomeCountQueryDo=new IncomeCountQueryDo();
+    incomeCountQueryDo.setUserId(1L);
+    incomeCountQueryDo.setStart(1L);
+    incomeCountQueryDo.setEnd(System.currentTimeMillis());
+    List<IncomeCategoryDo> categoryIncome = incomeDao.getCategoryIncome(incomeCountQueryDo);
+    System.out.println(JsonUtil.toJson(categoryIncome));
+  }
+
+  @Test
+  public void testEveryIncoem(){
+    IncomeCountQueryDo incomeCountQueryDo=new IncomeCountQueryDo();
+    incomeCountQueryDo.setStart(1L);
+    incomeCountQueryDo.setEnd(System.currentTimeMillis());
+    incomeCountQueryDo.setUserId(1L);
+    List<EveryIncomeDo> everyCategoryIncome = incomeDao
+        .getEveryCategoryIncome(incomeCountQueryDo);
+    System.out.println(JsonUtil.toJson(everyCategoryIncome));
   }
 
 }
