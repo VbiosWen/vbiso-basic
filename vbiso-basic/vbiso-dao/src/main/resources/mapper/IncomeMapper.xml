@@ -39,12 +39,19 @@
     sum(income_data) AS incomeData
   </sql>
 
+  <sql id="timeJobColumn">
+    user_id AS userId,
+    income_id AS incomeId,
+    to_days(from_unixtime(income_date/1000)) AS incomeDate,
+    sum(income_data) AS incomeData
+  </sql>
+
   <select id="getByUserId" parameterType="long" resultMap="IncomeResult">
     SELECT
     <include refid="incomeColumn"/>
     FROM income
     WHERE
-    user_id=#{userId}
+    user_id=#{userId} ORDER BY income_date DESC
   </select>
 
   <insert id="insertIncome" parameterType="incomeDo">
@@ -83,6 +90,7 @@
         AND category_id=#{categoryId}
       </if>
     </where>
+    ORDER BY income_date DESC
     limit
     #{page},#{limit}
   </select>
@@ -122,10 +130,23 @@
     </where>
   </select>
 
-  <select id="getSumIncome" parameterType="long" resultType="double">
+  <select id="getSumIncome" parameterType="long" resultType="java.lang.Double">
     SELECT sum(income_data) FROM income
     WHERE
     user_id=#{userId}
+  </select>
+
+  <select id="getTotalIncome" parameterType="com.vbiso.domain.IncomeCountQueryDo" resultType="java.lang.Double">
+    SELECT sum(income_data) FROM income
+    <where>
+      user_id=#{userId}
+      <if test="start!=0">
+        AND income_date &gt;=#{start}
+      </if>
+      <if test="end!=0">
+        AND income_date &lt;=#{end}
+      </if>
+    </where>
   </select>
 
   <select id="getCategoryIncome" parameterType="com.vbiso.domain.IncomeCountQueryDo" resultType="incomeCategoryDo">
@@ -159,6 +180,26 @@
       GROUP BY category_id
     </where>
   </select>
+
+  <select id="getEveryDayIncome" parameterType="com.vbiso.domain.QueryDo" resultType="timeJobIncomeDo">
+    SELECT
+    <include refid="timeJobColumn"/>
+    FROM income
+    <where>
+      <if test="start!=0">
+        income_date &gt;=#{start}
+      </if>
+      GROUP BY to_days(from_unixtime(income_date/1000))
+    </where>
+  </select>
+
+  <delete id="delSingleIncome" parameterType="long">
+    DELETE FROM income WHERE income_id=#{incomeId}
+  </delete>
+
+  <delete id="delBatchIncome">
+    DELETE FROM income WHERE user_id=#{userId} AND category_id=#{categoryId}
+  </delete>
 
 
 </mapper>

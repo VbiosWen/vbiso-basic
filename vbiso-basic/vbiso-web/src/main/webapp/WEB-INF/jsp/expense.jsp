@@ -36,7 +36,7 @@
 </div>
 <button class="layui-btn" data-type="reload">搜索</button>
 <div class="expensesTable">
-    <table class="layui-hide" id="expensesTable"></table>
+    <table class="layui-hide" id="expensesTable" lay-filter="expenses"></table>
 </div>
 
 
@@ -122,6 +122,7 @@
         , {field: 'expensesDate', title: '日期', templet: '#createTime'}
         , {field: 'expensesDesc', title: '支出详情'}
         , {field: 'categoryId', name: 'category', title: '分类'}
+        ,{field:'right',title:'操作',width:178,align:'center',toolbar:'#barDemo'}
       ]],
       page: 'true',
       limit: '10',
@@ -139,12 +140,39 @@
         });
       }
     });
+
+    table.on('tool(expenses)',function (obj) {
+      var event=obj.event;
+      var data=obj.data;
+      if(event=='del'){
+        layer.confirm('确定删除吗',function (index) {
+          $.ajax({
+            url:'/expense/delSingleExpenses?expensesId='+data.expensesId,
+            type:'get',
+            success:function (result) {
+              if(result.success){
+                obj.del();
+                layer.close(index);
+                layer.msg('删除成功',{icon:6});
+              }else{
+                layer.close(index);
+                layer.msg('删除失败',{icon:6});
+              }
+            }
+          });
+        });
+      }
+    });
+
     $('#addExpense').click(function () {
       layer.open({
         title: '添加支出记录',
         type: '2',
         area: ['550px', '500px'],
         btn: '退出',
+        yes:function (index) {
+          location.reload();
+        },
         content: '<iframe src="/expense/add" height="100%" width="100%" frameborder="0"></iframe>'
       })
     });
@@ -192,6 +220,10 @@
     }}
 </script>
 
+
+<script type="text/html" id="barDemo">
+    <a class="layui-icon" style="color: red;font-weight: bold;" lay-event="del">&#x1006;</a>
+</script>
 
 </body>
 </html>

@@ -1,6 +1,13 @@
 package com.vbiso.dao;
 
+import com.vbiso.domain.EveryExpensesDo;
+import com.vbiso.domain.ExpensesCategoryDo;
+import com.vbiso.domain.ExpensesCountDo;
+import com.vbiso.domain.ExpensesCountQueryDo;
 import com.vbiso.domain.ExpensesDo;
+import com.vbiso.domain.IncomeCountQueryDo;
+import com.vbiso.domain.QueryDo;
+import com.vbiso.domain.TimeJobExpensesDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.mapping.FieldDo;
 import com.vbiso.pojo.IncomeExpensesQueryPojo;
@@ -24,6 +31,19 @@ public interface ExpensesDao {
 
   long getTotalCount(IncomeExpensesQueryPojo incomeExpensesQueryPojo)throws BaseException;
 
-  double getSumData(@Param("userId") long userId);
+  Double getSumData(@Param("userId") long userId);
 
+  List<ExpensesCountDo> getDayExpenses(ExpensesCountQueryDo expensesCountQueryDo)throws BaseException;
+
+  List<ExpensesCategoryDo> getCategoryExpenses(ExpensesCountQueryDo expensesCountQueryDo)throws BaseException;
+
+  List<EveryExpensesDo> getEveryCategoryExpenses(ExpensesCountQueryDo expensesCountQueryDo)throws BaseException;
+
+  Double getTotalExpenses(IncomeCountQueryDo incomeCountQueryDo) throws BaseException;
+
+  List<TimeJobExpensesDo> getEveryDayExpenses(QueryDo queryDo)throws BaseException;
+
+  Integer delSingleExpenses(@Param("expensesId") long expensesId)throws BaseException;
+
+  Integer delBatchExpenses(@Param("userId") long userId,@Param("categoryId") long categoryId) throws BaseException;
 }

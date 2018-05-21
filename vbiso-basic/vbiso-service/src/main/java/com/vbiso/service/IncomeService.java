@@ -29,4 +29,6 @@ public interface IncomeService {
 
   ServiceResult<List<IncomeEveryCatResult>> getEveryCatIncome(IncomeCountQueryDo incomeCountQueryDo);
 
+  ServiceResult<Integer>delSingleIncome(long incomeId);
+
 }

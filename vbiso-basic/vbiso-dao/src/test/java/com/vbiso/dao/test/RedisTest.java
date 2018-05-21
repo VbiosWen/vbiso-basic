@@ -41,4 +41,10 @@ public class RedisTest {
     System.out.println(set);
     je.close();
   }
+
+  @Test
+  public void testSexExpire(){
+    String test = redisDao.setExpire("test,", "test", 10);
+    System.out.println(test);
+  }
 }

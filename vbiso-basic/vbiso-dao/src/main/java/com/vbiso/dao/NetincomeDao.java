@@ -20,6 +20,8 @@ public interface NetincomeDao {
 
   int updateNetincome(@Param("userId") long userId,@Param("list")List<FieldDo> fieldDo);
 
-  double getSumNetincome(@Param("userId") long userId);
+  Double getSumNetincome(@Param("userId") long userId);
+
+  int insertBatchIncome(@Param("list") List<NetIncomeDo> list);
 
 }

@@ -16,32 +16,24 @@ public class LoginFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
         FilterChain filterChain) throws ServletException, IOException {
-      String requestURI = request.getRequestURI();
+      String path = request.getRequestURI();
 
       ServiceResult<UserDo> result= (ServiceResult<UserDo>) request.getSession().getAttribute("user");
-      if(requestURI.contains(".css")||requestURI.contains(".js")||requestURI.contains(".jpg")){
+      if((path.contains("js")&&!path.contains(".jsp"))||path.contains("css")||path.contains("jpg")||path.contains("png")
+          ||path.contains("/layui")){
         filterChain.doFilter(request,response);
         return;
       }
-      if(requestURI.contains("/returnLogin")||requestURI.contains("login")||"/".equals(requestURI)){
-        if(result==null&&requestURI.contains("/user/login")){
-          filterChain.doFilter(request,response);
-          return;
-        }else if(result==null){
-          request.getRequestDispatcher("/user/returnLogin").forward(request,response);
-          return;
-        }
-        if(!result.isSuccess()){
-          filterChain.doFilter(request,response);
-          return;
-        }else if(result.getData()==null){
-          filterChain.doFilter(request,response);
-        }
+      if(path.contains("user")){
+        filterChain.doFilter(request,response);
+        return;
       }else{
-        if (result==null){
+        if(result==null){
           response.sendRedirect("../user/returnLogin");
-        }else {
+          return;
+        }else{
           filterChain.doFilter(request,response);
+          return;
         }
       }
     }

@@ -105,5 +105,17 @@ public class UserDaoTest {
     System.out.println(new Date(1523333195156L));
   }
 
+  @Test
+  public void testGetUserInfoByMobile(){
+    UserDo userInfoByMobile = userDao.getUserInfoByMobile("154434444");
+    System.out.println(userInfoByMobile);
+  }
+
+  @Test
+  public void testGetSumData(){
+    Double sumIncome = incomeDao.getSumIncome(1526127171268L);
+    System.out.println(sumIncome);
+  }
+
 
 }

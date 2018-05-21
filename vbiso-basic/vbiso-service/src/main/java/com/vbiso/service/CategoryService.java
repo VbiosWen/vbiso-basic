@@ -16,4 +16,6 @@ public interface CategoryService {
 
   ServiceResult<Integer> insertCategory(CategoryDo categoryDo);
 
+  ServiceResult<Integer> delSingleCategory(long categoryId,long userId);
+
 }

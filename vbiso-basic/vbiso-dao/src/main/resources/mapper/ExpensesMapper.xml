@@ -25,6 +25,26 @@
         sum(expenses_data) AS expensesData
     </sql>
 
+    <sql id="timeJobExpenses">
+        user_id AS userId,
+        expenses_id AS expensesId,
+        expenses_date AS expensesDate,
+        sum(expenses_data) AS expensesData
+    </sql>
+
+    <sql id="expensesCategoryColumn">
+        user_id AS userId,
+        sum(expenses_data) AS expensesData,
+        expenses_date AS expensesDate,
+        category_id AS categoryId
+    </sql>
+
+    <sql id="everyIncomeColumn">
+        user_id AS userId,
+        category_id AS categoryId,
+        sum(expenses_data) AS expensesData
+    </sql>
+
     <select id="getByUserId" parameterType="long" resultMap="expensesResult">
         SELECT
         <include refid="expensesColumn"/>
@@ -52,6 +72,7 @@
                 AND category_id=#{categoryId}
             </if>
         </where>
+        ORDER BY expenses_date DESC
         limit
         #{page},#{limit}
     </select>
@@ -74,7 +95,7 @@
         </where>
     </select>
 
-    <select id="getSumData" parameterType="long" resultType="double">
+    <select id="getSumData" parameterType="long" resultType="java.lang.Double">
         SELECT sum(expenses_data) FROM expenses WHERE user_id=#{userId}
     </select>
 
@@ -103,8 +124,8 @@
 
     <select id="getCategoryExpenses" parameterType="com.vbiso.domain.ExpensesCountQueryDo" resultType="expensesCategoryDo">
         SELECT
-        <include refid="incomeCategoryColumn"/>
-        FROM income
+        <include refid="expensesCategoryColumn"/>
+        FROM expenses
         <where>
             user_id=#{userId}
             <if test="start!=0">
@@ -120,7 +141,7 @@
     <select id="getEveryCategoryExpenses" parameterType="com.vbiso.domain.ExpensesCountQueryDo" resultType="everyExpensesDo">
         SELECT
         <include refid="everyIncomeColumn"/>
-        FROM income
+        FROM expenses
         <where>
             user_id=#{userId}
             <if test="start!=0">
@@ -133,6 +154,40 @@
         </where>
     </select>
 
+    <select id="getTotalExpenses" parameterType="com.vbiso.domain.IncomeCountQueryDo" resultType="java.lang.Double">
+        SELECT sum(expenses_data) FROM expenses
+        <where>
+            user_id=#{userId}
+            <if test="start!=0">
+            AND  expenses_date &gt;=#{start}
+            </if>
+
+            <if test="end!=0">
+            AND expenses_date &lt;=#{end};
+            </if>
+
+        </where>
+    </select>
+
+    <select id="getEveryDayExpenses" parameterType="com.vbiso.domain.QueryDo" resultType="timeJobExpensesDo">
+        SELECT
+        <include refid="timeJobExpenses"/>
+        FROM income
+        <where>
+            <if test="start!=0">
+                expenses_date &gt;=#{start}
+            </if>
+            GROUP BY to_days(from_unixtime(expenses_date/1000))
+        </where>
+    </select>
+
+    <delete id="delSingleExpenses" parameterType="long">
+        DELETE FROM expenses WHERE expenses_id=#{expensesId}
+    </delete>
+
+    <delete id="delBatchExpenses">
+        DELETE FROM expenses WHERE user_id=#{userId} AND category_id=#{categoryId}
+    </delete>
 
 
 </mapper>

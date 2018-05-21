@@ -132,4 +132,14 @@ public class IncomoTest {
     System.out.println(JsonUtil.toJson(everyCategoryIncome));
   }
 
+  @Test
+  public void testCount(){
+    IncomeCountQueryDo incomeCountQueryDo=new IncomeCountQueryDo();
+    incomeCountQueryDo.setStart(0L);
+    incomeCountQueryDo.setEnd(System.currentTimeMillis());
+    incomeCountQueryDo.setUserId(1L);
+    Double totalIncome = incomeDao.getTotalIncome(incomeCountQueryDo);
+    System.out.println(totalIncome);
+  }
+
 }

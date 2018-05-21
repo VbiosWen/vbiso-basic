@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+  <context:component-scan base-package="com.vbiso.timejob"/>
+
+  <bean id="expensesWarnDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="targetObject" ref="expensesWarnJob"/>
+    <property name="targetMethod" value="doJob"/>
+    <property name="concurrent" value="true"/>
+  </bean>
+
+  <bean id="expensesWarnTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+    <property name="jobDetail" ref="expensesWarnDetail"/>
+    <property name="cronExpression" value="0 0/5 * * * ?"/>
+  </bean>
+
+  <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <property name="triggers">
+      <list>
+        <ref bean="expensesWarnTrigger"/>
+      </list>
+    </property>
+  </bean>
+
+</beans>

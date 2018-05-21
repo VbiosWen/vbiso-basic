@@ -25,6 +25,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -75,7 +76,7 @@ public class IncomeController {
   public ServiceResult<Integer> add(@RequestBody IncomeForm incomeForm,HttpServletRequest request){
     UserDo userDo = UserLoginUtil.getUserLoginInfo(request);
     IncomeDo incomeDo = new IncomeDo();
-    incomeDo.setIncomeId(IdUtil.generateId());
+    incomeDo.setIncomeId(IdUtil.generateId()/1000);
     incomeDo.setIncomeDate(incomeForm.getIncomeDate());
     incomeDo.setIncomeData(incomeForm.getIncomeData());
     incomeDo.setIncomeDesc(incomeForm.getDesc());
@@ -123,6 +124,13 @@ public class IncomeController {
     ServiceResult<List<IncomeEveryCatResult>> everyCatIncome = incomeService
         .getEveryCatIncome(incomeCountQueryDo);
     return everyCatIncome;
+  }
+
+  @RequestMapping(value = "/delSingleIncome",method = RequestMethod.GET)
+  @ResponseBody
+  public ServiceResult<Integer> delSingleIncome(long incomeId){
+    ServiceResult<Integer> result = incomeService.delSingleIncome(incomeId);
+    return result;
   }
 
 }

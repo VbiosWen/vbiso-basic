@@ -12,7 +12,7 @@ import org.codehaus.jackson.map.ObjectMapper;
  * @Date: Created in 下午11:28 2018/4/13
  * @Modified By:
  */
-public class JsonUtil {
+public class JsonUtil<T> {
 
   public static String toJson(Object object){
     ObjectMapper objectMapper=new ObjectMapper();
@@ -31,6 +31,12 @@ public class JsonUtil {
       }
     }
     return sw.toString();
+  }
+
+  public static Object toJson(String str,Class clzz) throws IOException {
+    ObjectMapper objectMapper=new ObjectMapper();
+    Object o = objectMapper.readValue(str, clzz);
+    return o;
   }
 
 }

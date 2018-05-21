@@ -29,4 +29,6 @@ public interface CategoryDao {
 
   List<CategoryDo> selectCategoryList(@Param("userId") long userId);
 
+  Integer delSingleCategory(@Param("categoryId") long categoryId,@Param("userId") long userId) throws BaseException;
+
 }

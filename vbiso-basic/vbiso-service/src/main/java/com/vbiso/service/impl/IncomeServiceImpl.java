@@ -11,6 +11,7 @@ import com.vbiso.domain.IncomeDo;
 import com.vbiso.domain.PageDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.pojo.IncomeExpensesQueryPojo;
+import com.vbiso.redis.RedisDao;
 import com.vbiso.result.ServiceResult;
 import com.vbiso.service.IncomeService;
 import com.vbiso.service.result.IncomeCategoryResult;
@@ -43,6 +44,9 @@ public class IncomeServiceImpl implements IncomeService {
   @Autowired
   private CategoryDao categoryDao;
 
+  @Autowired
+  private RedisDao redisDao;
+
 
   @Override
   public ServiceResult<PageDo<List<IncomeDo>>> selectByPage(
@@ -71,6 +75,7 @@ public class IncomeServiceImpl implements IncomeService {
     ServiceResult<Integer> result = new ServiceResult<>();
     try {
       int i = incomeDao.insertIncome(incomeDo);
+      redisDao.setExpire(String.valueOf(incomeDo.getUserId()),JsonUtil.toJson(incomeDo),24*60*60*1000);
       result.setData(i);
       result.setSuccess(true);
       result.setCode(0);
@@ -124,6 +129,16 @@ public class IncomeServiceImpl implements IncomeService {
 
   }
 
+  @Override
+  public ServiceResult<Integer> delSingleIncome(long incomeId) {
+    ServiceResult<Integer> result=new ServiceResult<>();
+    Integer integer = incomeDao.delSingleIncome(incomeId);
+    result.setSuccess(true);
+    result.setData(integer);
+    result.setCode(0);
+    return result;
+  }
+
   private List<IncomeEveryCatResult> buildParamToCat(List<EveryIncomeDo> everyCategoryIncome,
       List<CategoryDo> categoryDos) {
     List<IncomeEveryCatResult> results=new ArrayList<>();
@@ -146,8 +161,6 @@ public class IncomeServiceImpl implements IncomeService {
   }
 
   private Map<String,List<IncomeCategoryResult>> invertIncomeToMap(List<IncomeCategoryResult> incomeCategoryResults) {
-    List<Long> dateList=new ArrayList<>();
-    List<String> categoryList=new ArrayList<>();
     Map<String,List<IncomeCategoryResult>> incomeData=new HashMap<>();
     for(IncomeCategoryResult incomeCategoryResult:incomeCategoryResults){
       incomeData.put(incomeCategoryResult.getCategoryDesc(),new ArrayList<>());

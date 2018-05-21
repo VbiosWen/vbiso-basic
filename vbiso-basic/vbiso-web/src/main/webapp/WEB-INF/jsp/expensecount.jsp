@@ -119,6 +119,222 @@
           }
         });
       }
+      $('.layui-btn').on('click', function () {
+        getData();
+      });
+
+      function eachLine(data, startDate, endDate) {
+        var incomeData = {};
+        //console.log(startDate);
+        var start = getDayOfYear(startDate);
+        var end = getDayOfYear(endDate);
+        var sum = end - start;
+        var dateArr = new Array();
+        var date = new Date();
+        for (var i = 0; i <= sum; i++) {
+          var date1 = startDate + i * 24 * 60 * 60 * 1000;
+          date.setTime(date1);
+          dateArr[i] = date.toLocaleDateString();
+        }
+        for (var dt in data) {
+          var catIncData=new Array();
+          for(var i=0;i<(end-start);i++){
+            catIncData[i]=0;
+          }
+          //console.log(catIncData);
+
+          //console.log(data[dt]);
+          for(var value=0;value<data[dt].length;value++){
+            var now=getDayOfYear(data[dt][value].expensesDate);
+            var temp=now-start;
+            catIncData[temp]=data[dt][value].expensesData;
+            // console.log(data[dt][value].incomeData);
+          }
+          incomeData[dt] = catIncData;
+        }
+        //console.log(incomeData);
+        insertMoreLineData(dateArr, incomeData);
+      }
+
+      function buildSeries(incomeData) {
+        var series = [];
+        for (var dt in incomeData) {
+          var item = {
+            name: dt,
+            type: 'line',
+            stack: '总数',
+            data: incomeData[dt]
+          }
+          series.push(item);
+        }
+        //console.log(series);
+        return series;
+      }
+
+      function eachBar(data) {
+        var catArr=new Array();
+        var incomeData=new Array();
+        var treeIncomeData=new Array();
+        for(var i=0;i<data.length;i++){
+          catArr[i]=data[i].category;
+          var inData={'value':data[i].sum,'name':data[i].category};
+          incomeData.push(inData);
+          treeIncomeData.push(data[i].sum);
+        }
+        var treeOption = {
+          title:{
+            text:'个人支出柱状图',
+            subtext:'根据个人支出记录统计',
+            x:'center'
+          },
+          xAxis: {
+            type: 'category',
+            data: catArr
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [{
+            data: treeIncomeData,
+            type: 'bar'
+          }]
+        };
+        myTreeCharts.setOption(treeOption);
+        var option={
+          title : {
+            text: '个人支出饼状图',
+            subtext: '根据个人支出记录统计',
+            x:'center'
+          },
+          tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+          },
+          legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: catArr
+          },
+          series : [
+            {
+              name: '支出详情',
+              type: 'pie',
+              radius : '55%',
+              center: ['50%', '60%'],
+              data:incomeData,
+              itemStyle: {
+                emphasis: {
+                  shadowBlur: 10,
+                  shadowOffsetX: 0,
+                  shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+              }
+            }
+          ]
+        };
+        myBarCharts.setOption(option);
+      }
+
+      function insertMoreLineData(dateArr, incomeData) {
+        var series = buildSeries(incomeData);
+        var cat=buildCat(incomeData);
+        var moreLine = {
+          title: {
+            text: '日支出分类统计'
+          },
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            data: cat
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          toolbox: {
+            feature: {
+              saveAsImage: {}
+            }
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: dateArr
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: series
+        }
+        myMoreCharts.setOption(moreLine);
+      }
+
+      function buildCat(incomeData) {
+        var cat=[];
+        for(var dt in incomeData){
+          cat.push(dt);
+        }
+        return cat;
+      }
+
+      function each(data) {
+        var xData = new Array();
+        var yData = new Array();
+        data.forEach(function (value, item) {
+          var date = new Date();
+          date.setTime(value.expensesDate);
+          xData[item] = date.toLocaleDateString();
+          yData[item] = value.expensesData;
+        });
+        insertLineData(xData, yData);
+      }
+      function insertLineData(xData, yData) {
+        mycharts.title = '日支出统计';
+        var line = {
+          title: {
+            text: '日支出统计'
+          },
+          color: ['#3398DB'],
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          grid: {
+            left: '3%',
+            right: '3%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: [
+            {
+              type: 'category',
+              data: xData,
+              axisTick: {
+                alignWithLabel: true
+              }
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: '支出记录',
+              type: 'line',
+              barWidth: '60%',
+              data: yData
+            }
+          ]
+        };
+        mycharts.setOption(line);
+      }
     });
 </script>
 </body>

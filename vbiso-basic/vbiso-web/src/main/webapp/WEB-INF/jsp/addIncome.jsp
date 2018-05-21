@@ -31,7 +31,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">收入数目</label>
             <div class="layui-input-inline">
-                <input type="number" name="incomeData" lay-verify="required|number"
+                <input type="number" name="incomeData" lay-verify="required|number|incomeData"
                        autocomplete="off" class="layui-input"/>
             </div>
         </div>
@@ -91,6 +91,16 @@
      form.render('select');
    }
 
+   form.verify({
+     datetime:function (value) {
+      var time= Date.parse(value);
+      var now=Date.now();
+      console.log(time,now);
+      if(time>now){
+        return '日期不能大于现在的时间';
+      }
+     }
+   });
    var index=layedit.build('editIncome');
    form.on('submit(sub)',function (data) {
      var editTest=layedit.getText(index);

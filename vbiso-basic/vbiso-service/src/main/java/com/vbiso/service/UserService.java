@@ -3,6 +3,7 @@ package com.vbiso.service;
 import com.vbiso.domain.UserDo;
 import com.vbiso.domain.UserInfo;
 import com.vbiso.result.ServiceResult;
+import com.vbiso.service.result.InviteCodeResult;
 
 /**
  * @Author: wenliujie
@@ -23,6 +24,12 @@ public interface UserService {
   ServiceResult<UserInfo> getUserInfo(long userId);
 
   ServiceResult<UserDo> getUserInfoNoPass(long userId);
+
+  ServiceResult<InviteCodeResult> sendMobile(String mobile);
+
+  ServiceResult<UserDo> getUserByMobile(String mobile);
+
+  ServiceResult<Boolean> confirmInviteCode(String mobile,String inviteCode);
 
 
 

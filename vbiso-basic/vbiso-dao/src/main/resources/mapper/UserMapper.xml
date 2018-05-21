@@ -48,9 +48,9 @@
   </select>
   <insert id="insertUser" parameterType="userDo" keyProperty="uid">
    INSERT INTO users
-   (user_id, user_nick, user_password, created_time, modify_time, user_mobile)
+   (user_id, user_nick, user_password, created_time, modify_time, user_mobile,user_sex)
    VALUES
-   (#{userId},#{userNick},#{password},#{createdTime},#{modifyTime},#{userMobile})
+   (#{userId},#{userNick},#{userPassword},#{createdTime},#{modifyTime},#{userMobile},#{userSex})
   </insert>
 
   <update id="updateFieldByUserId" parameterType="java.util.List">
@@ -61,6 +61,13 @@
     </foreach>
     WHERE user_id = #{userId}
   </update>
+
+  <select id="getUserInfoByMobile" parameterType="String" resultMap="UserResult">
+    SELECT
+    <include refid="usersColumn"/>
+    FROM users
+    WHERE user_mobile=#{mobile}
+  </select>
   
 
   <!--<select id="getUserById" parameterType="long" resultType="loginList">-->

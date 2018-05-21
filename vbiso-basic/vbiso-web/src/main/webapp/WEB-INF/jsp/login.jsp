@@ -57,11 +57,6 @@
         if (value == "") {
           return "请输入密码";
         }
-      },
-      code: function (value) {
-        if (value == "") {
-          return "请输入验证码";
-        }
       }
     });
     // 提交监听

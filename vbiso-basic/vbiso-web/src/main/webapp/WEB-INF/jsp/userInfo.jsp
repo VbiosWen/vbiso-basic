@@ -26,8 +26,8 @@
     <div class="layui-form-item">
         <label class="layui-form-label">性别:</label>
         <div class="radioSex">
-            <input type="radio" name="sex" id="man" value="0" title="男">
-            <input type="radio" name="sex" id="woman" value="1" title="女">
+            <input type="radio" name="sex" id="man" value="1" title="男">
+            <input type="radio" name="sex" id="woman" value="2" title="女">
         </div>
     </div>
     <div class="layui-form-item">
@@ -101,14 +101,14 @@
     });
 
     function insertValue(data) {
-      console.log(data);
       $('#userNick').attr("value", data.userNick);
       $('#incomeData').attr("value", data.incomeData);
       $('#expensesData').attr("value", data.expensesData);
-      $("input[name='sex']").get(0).checked = true;
+      // $("input[name='sex']").get(0).checked = true;
       $('#sumData').attr("value", data.sumData);
       $(".radioSex").find("input[type='sex']").removeAttr("checked");
-      if (data.sex == '1') {
+      if (data.sex == '2') {
+        console.log(data.sex);
         $('#woman').attr("checked","checked");
       }else{
         $('#man').attr("checked","checked");
@@ -127,7 +127,7 @@
           return '用户名不能全为数字';
         }
       },
-      userPassword:function (value, item) {
+      userPassword:function (value) {
         if(!new RegExp("/^[\S]{6,12}$/")){
           return '用户密码必须6到12位';
         }

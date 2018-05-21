@@ -1,5 +1,7 @@
 package com.vbiso.dao;
 
+import com.vbiso.domain.IncomeCountDo;
+import com.vbiso.domain.QueryDo;
 import com.vbiso.domain.UserDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.mapping.FieldDo;
@@ -28,5 +30,9 @@ public interface UserDao {
   UserDo getUserInfo(@Param("userId") long userId) throws BaseException;
 
   UserDo getUserInfoNoPass(@Param("userId") long userId) throws BaseException;
+
+  UserDo getUserInfoByMobile(@Param("mobile")String mobile)throws BaseException;
+
+
 
 }

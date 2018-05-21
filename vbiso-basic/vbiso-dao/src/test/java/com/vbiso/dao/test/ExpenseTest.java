@@ -1,6 +1,10 @@
 package com.vbiso.dao.test;
 
 import com.vbiso.dao.ExpensesDao;
+import com.vbiso.domain.EveryExpensesDo;
+import com.vbiso.domain.ExpensesCategoryDo;
+import com.vbiso.domain.ExpensesCountDo;
+import com.vbiso.domain.ExpensesCountQueryDo;
 import com.vbiso.domain.ExpensesDo;
 import com.vbiso.pojo.IncomeExpensesQueryPojo;
 import com.vbiso.utils.JsonUtil;
@@ -66,4 +70,35 @@ public class ExpenseTest {
     System.out.println(sumData);
   }
 
+  @Test
+  public void testQuery(){
+    ExpensesCountQueryDo expensesCountQueryDo=new ExpensesCountQueryDo();
+    expensesCountQueryDo.setUserId(1L);
+    expensesCountQueryDo.setEnd(System.currentTimeMillis());
+    expensesCountQueryDo.setStart(1L);
+    List<ExpensesCategoryDo> categoryExpenses =
+        expensesDao.getCategoryExpenses(expensesCountQueryDo);
+    System.out.println(JsonUtil.toJson(categoryExpenses));
+  }
+
+  @Test
+  public void testQueryQ(){
+    ExpensesCountQueryDo expensesCountQueryDo=new ExpensesCountQueryDo();
+    expensesCountQueryDo.setUserId(1L);
+    expensesCountQueryDo.setEnd(System.currentTimeMillis());
+    expensesCountQueryDo.setStart(1L);
+    List<EveryExpensesDo> everyCategoryExpenses = expensesDao
+        .getEveryCategoryExpenses(expensesCountQueryDo);
+    System.out.println(JsonUtil.toJson(everyCategoryExpenses));
+  }
+
+  @Test
+  public void testQueryCount(){
+    ExpensesCountQueryDo expensesCountQueryDo=new ExpensesCountQueryDo();
+    expensesCountQueryDo.setUserId(1L);
+    expensesCountQueryDo.setEnd(1525881600000L);
+    expensesCountQueryDo.setStart(1525276800000L);
+    List<ExpensesCountDo> dayExpenses = expensesDao.getDayExpenses(expensesCountQueryDo);
+    System.out.println(JsonUtil.toJson(dayExpenses));
+  }
 }

@@ -32,4 +32,8 @@
     user_id=#{userId}
   </select>
 
+  <delete id="delSingleCategory" parameterType="long">
+    DELETE FROM category WHERE category_id=#{categoryId} AND user_id=#{userId}
+  </delete>
+
 </mapper>

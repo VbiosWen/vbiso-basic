@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <import resource="vbiso-service.xml"/>
+  <context:component-scan base-package="com.vbiso.timejob"/>
+
+
+  <bean id="crmAutoCountNetIncomeTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+    <property name="jobDetail" ref="crmAutoCountNetIncomeDetail"></property>
+    <property name="cronExpression" value=""></property>
+  </bean>
+
+  <bean id="crmAutoCountNetIncomeDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="targetObject" ref="autoCountNetIncomeManager"></property>
+    <property name="concurrent" value="false"></property>
+    <property name="targetMethod" value="autoCount"></property>
+  </bean>
+
+  <bean id="start" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <property name="triggers">
+      <list>
+        <ref bean="crmAutoCountNetIncomeTrigger"/>
+      </list>
+    </property>
+  </bean>
+
+</beans>

@@ -80,7 +80,8 @@
           startVal=Date.parse(start);
         }
         if(end==''){
-          endVal=new Date().getTime();
+          endVal=Date.now();
+          console.log(endVal);
         }else{
           endVal=Date.parse(end);
         }
@@ -91,7 +92,6 @@
       data.userId =${sessionScope.get("user").data.userId};
       data.start = startVal;
       data.end = endVal;
-      var date = new Date();
       $.ajax({
         url: '/income/selectIncomeDay',
         type: 'post',
@@ -135,7 +135,7 @@
       }
       var treeOption = {
         title:{
-          text:'个人收入树状图',
+          text:'个人收入柱状图',
           subtext:'根据个人收入记录统计',
           x:'center'
         },
@@ -169,7 +169,7 @@
         },
         series : [
           {
-            name: '访问来源',
+            name: '收入详细',
             type: 'pie',
             radius : '55%',
             center: ['50%', '60%'],
@@ -205,7 +205,7 @@
         for(var i=0;i<(end-start);i++){
           catIncData[i]=0;
         }
-        console.log(catIncData);
+        //console.log(catIncData);
 
         //console.log(data[dt]);
         for(var value=0;value<data[dt].length;value++){

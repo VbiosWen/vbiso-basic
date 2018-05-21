@@ -15,4 +15,8 @@ public class StringUtil {
     public static boolean contains(String parent,String son){
         return StringUtils.contains(parent,son);
     }
+
+    public static String format(String model,String str){
+        return String.format(model,str);
+    }
 }

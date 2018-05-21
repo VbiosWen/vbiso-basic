@@ -1,6 +1,8 @@
 package com.vbiso.service.impl;
 
 import com.vbiso.dao.CategoryDao;
+import com.vbiso.dao.ExpensesDao;
+import com.vbiso.dao.IncomeDao;
 import com.vbiso.domain.CategoryDo;
 import com.vbiso.exception.BaseException;
 import com.vbiso.result.ServiceResult;
@@ -9,6 +11,9 @@ import com.vbiso.utils.IdUtil;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Author: wenliujie
@@ -21,6 +26,12 @@ public class CategoryServiceImpl implements CategoryService {
 
   @Autowired
   private CategoryDao categoryDao;
+
+  @Autowired
+  private IncomeDao incomeDao;
+
+  @Autowired
+  private ExpensesDao expensesDao;
 
   @Override
   public ServiceResult<List<CategoryDo>> selectCatList(long userId) {
@@ -42,7 +53,7 @@ public class CategoryServiceImpl implements CategoryService {
   public ServiceResult<Integer> insertCategory(CategoryDo categoryDo) {
     ServiceResult<Integer> result=new ServiceResult<>();
     try {
-      categoryDo.setCategoryId(IdUtil.generateId());
+      categoryDo.setCategoryId(IdUtil.generateId()/1000);
       int count = categoryDao.insertCategory(categoryDo);
       result.setSuccess(true);
       result.setData(count);
@@ -52,6 +63,22 @@ public class CategoryServiceImpl implements CategoryService {
       result.setSuccess(false);
     }
 
+    return result;
+  }
+  @Transactional(propagation = Propagation.REQUIRED)
+  @Override
+  public ServiceResult<Integer> delSingleCategory(long categoryId,long userId) {
+    ServiceResult<Integer> result=new ServiceResult<>();
+    try {
+      Integer integer = categoryDao.delSingleCategory(categoryId,userId);
+      Integer integer1 = incomeDao.delBatchIncome(userId, categoryId);
+      Integer integer2 = expensesDao.delBatchExpenses(userId, categoryId);
+      result.setData(integer+integer1+integer2);
+      result.setSuccess(true);
+      result.setCode(0);
+    } catch (BaseException e) {
+      e.printStackTrace();
+    }
     return result;
   }
 }

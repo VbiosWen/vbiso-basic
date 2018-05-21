@@ -12,7 +12,6 @@
 <body>
 
 <button class="layui-btn" id="addIncome">添加收支记录</button>
-<button class="layui-btn" id="addCategory">添加分类</button>
 <div class="layui-inline">
     <label class="layui-form-label">查询:</label>
     <div class="layui-input-inline">
@@ -37,11 +36,10 @@
 </div>
 <button class="layui-btn" data-type="reload">搜索</button>
 
-<table class="layui-hide" id="test"></table>
+<table class="layui-hide" id="test" lay-filter="income"></table>
 
 
 <script src="/layui/layui.js" charset="utf-8"></script>
-<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 <script>
   layui.use(['table', 'element', 'layer', 'form', 'laydate'], function () {
@@ -78,7 +76,7 @@
     function select(result) {
       var data = result.data;
       data.forEach(function (value) {
-        $('#category').append("<option value='" + value.categoryId + "'>" + value.categoryDesc
+        $('#category').append("<option value='" + value.categoryId.toString() + "'>" + value.categoryDesc
             + "</option>");
       });
       form.render('select');
@@ -95,6 +93,7 @@
         , {field: 'incomeDate', title: '日期', templet: '#createTime'}
         , {field: 'incomeDesc', title: '收入详情'}
         , {field: 'categoryId', title: '分类'}
+        ,{field:'right',title:'操作',width:178,align:'center',toolbar:'#barDemo'}
       ]],
       page: 'true',
       limit: '10',
@@ -112,23 +111,40 @@
       }
     });
 
+    table.on('tool(income)',function (obj) {
+     var event=obj.event;
+     var data=obj.data;
+     if(event=='del'){
+       layer.confirm('真的删除吗',function (index) {
+         $.ajax({
+           url:'/income/delSingleIncome?incomeId='+data.incomeId,
+           type:'get',
+           success:function (data) {
+            if(data.success){
+              obj.del();
+              layer.close(index);
+              layer.msg('删除成功',{icon:6});
+            }else{
+              layer.close(index);
+              layer.msg('删除失败',{icon:5});
+            }
+           }
+         });
+       })
+     }
+    });
+
     $('#addIncome').click(function () {
       layer.open({
         title: '添加收入记录',
         type: '2',
         area: ['550px', '500px'],
         btn: '退出',
+        yes:function (index) {
+          location.reload();
+        },
         content: '<iframe src="/income/addIncome" height="100%" width="100%" frameborder="0"></iframe>'
       })
-    });
-    $('#addCategory').click(function () {
-      layer.open({
-        title: '添加分类',
-        type: '2',
-        area: ['500px', '200px'],
-        btn: '退出',
-        content: '<iframe src="/category/addCategory" height="100%" width="100%" frameborder="0" scrolling="no"></iframe>'
-      });
     });
 
     function selectChange() {
@@ -173,7 +189,8 @@
     return date.Format("yyyy-MM-dd hh:mm:ss");
     }}
 </script>
-
-
+<script type="text/html" id="barDemo">
+    <a class="layui-icon" style="color: red;font-weight: bold;" lay-event="del">&#x1006;</a>
+</script>
 </body>
 </html>

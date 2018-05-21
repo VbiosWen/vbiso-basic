@@ -24,12 +24,21 @@
     user_id=#{userId}
   </select>
 
-  <select id="getSumNetincome" parameterType="long" resultType="double">
+  <select id="getSumNetincome" parameterType="long" resultType="java.lang.Double">
     SELECT sum(netincome_data) FROM NetIncome WHERE user_id=#{userId}
   </select>
 
   <insert id="insertNetincome" parameterType="netincomeDo">
     INSERT INTO NetIncome(netincome_id, netincome_data, user_id, netincome_date)
     VALUES (#{netincomeId},#{netincomeData},#{userId},#{netincomeDate})
+  </insert>
+
+  <insert id="insertBatchIncome">
+    INSERT INTO NetIncome
+    (netincome_id, netincome_data, user_id, netincome_date)
+    VALUES 
+    <foreach collection="list" item="netIncomeDo" separator=",">
+      (#{netincomeId},#{netincomeData},#{userId},#{netincomeDate})
+    </foreach>
   </insert>
 </mapper>

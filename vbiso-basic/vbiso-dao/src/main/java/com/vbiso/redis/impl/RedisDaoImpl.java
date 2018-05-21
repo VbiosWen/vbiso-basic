@@ -1,6 +1,7 @@
 package com.vbiso.redis.impl;
 
 import com.vbiso.redis.RedisDao;
+import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -50,7 +51,91 @@ public class RedisDaoImpl implements RedisDao {
 
   @Override
   public String get(String key) {
-    return null;
+    Jedis redis=null;
+    try {
+      redis=getRedis();
+      String s = redis.get(key);
+      return s;
+    }catch (Exception ex){
+      logger.error("db is error",ex);
+      return null;
+    }finally {
+      closeJedis(redis);
+    }
+  }
+
+  @Override
+  public String setExpire(String key, String value, int expire) {
+    Jedis redis=null;
+    try {
+      redis=getRedis();
+      String setex = redis.setex(key, expire, value);
+      return setex;
+    }catch (Exception e){
+      logger.error("db is error",e);
+      return null;
+    }finally {
+      closeJedis(redis);
+    }
+
+  }
+
+  @Override
+  public String hget(String key, String fieldKey) {
+    Jedis redis=null;
+    try {
+      redis=getRedis();
+      String value = redis.hget(key, fieldKey);
+      return value;
+    }catch (Exception e){
+      logger.error("value is can`t find",e);
+      return null;
+    }finally {
+      closeJedis(redis);
+    }
+  }
+
+  @Override
+  public Long hset(String key, String fieldKey, String value) {
+    Jedis redis=null;
+    try {
+      redis=getRedis();
+      Long hset = redis.hset(key, fieldKey, value);
+      return hset;
+    }catch (Exception ex){
+      logger.error("insert error",ex);
+      return null;
+    }finally {
+      closeJedis(redis);
+    }
+  }
+
+  @Override
+  public Long hdel(String key, String fieldKey) {
+    Jedis redis=null;
+    try {
+      redis=getRedis();
+      Long hdel = redis.hdel(key, fieldKey);
+      return hdel;
+    }catch (Exception ex){
+      return null;
+    }finally {
+      closeJedis(redis);
+    }
+  }
+
+  @Override
+  public Map<String,String> hgetAll(String key) {
+    Jedis redis=null;
+    try {
+      redis=getRedis();
+      Map<String, String> map = redis.hgetAll(key);
+      return map;
+    }catch (Exception ex){
+      return null;
+    }finally {
+      closeJedis(redis);
+    }
   }
 
   public Jedis getRedis() {

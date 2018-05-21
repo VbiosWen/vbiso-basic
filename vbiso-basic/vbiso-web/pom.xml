@@ -19,6 +19,12 @@
     </dependency>
 
     <dependency>
+      <groupId>com.vbiso</groupId>
+      <artifactId>vbiso-timejob</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
     </dependency>
@@ -75,10 +81,16 @@
       <scope>provided</scope>
       <exclusions>
         <exclusion>
-          <groupId>el-api</groupId>
-          <artifactId>el-impl</artifactId>
+          <groupId>javax.el</groupId>
+          <artifactId>el-api</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.el</groupId>
+      <artifactId>el-api</artifactId>
+      <version>2.2</version>
     </dependency>
 
     <dependency>

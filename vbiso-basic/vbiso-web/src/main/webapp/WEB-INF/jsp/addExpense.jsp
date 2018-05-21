@@ -82,6 +82,17 @@
       }
     });
 
+    form.verify({
+      datetime:function (value) {
+        var time= Date.parse(value);
+        var now=Date.now();
+        console.log(time,now);
+        if(time>now){
+          return '日期不能大于现在的时间';
+        }
+      }
+    });
+
     function select(result) {
       var data = result.data;
       data.forEach(function (value) {
