@@ -15,7 +15,6 @@
     <module>vbiso-domain</module>
     <module>vbiso-web</module>
     <module>vbiso-timejob</module>
-    <module>vbiso-timejob</module>
   </modules>
 
   <properties>
