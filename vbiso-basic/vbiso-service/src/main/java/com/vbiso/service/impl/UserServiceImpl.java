@@ -13,7 +13,10 @@ import com.vbiso.result.ServiceResult;
 import com.vbiso.service.UserService;
 import com.vbiso.service.result.InviteCodeResult;
 import com.vbiso.utils.FieldMappingUtil;
+import com.vbiso.utils.IdUtil;
 import com.vbiso.utils.InviteCodeUtil;
+import com.vbiso.utils.JsonUtil;
+import com.vbiso.utils.SendMsgUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,8 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
   private Logger logger= Logger.getLogger(UserServiceImpl.class);
+
+  private static final String STRING_INVITECODE_MSG="【个人收支管理系统】您的验证码是%s。如非本人操作，请忽略本短信";
 
   private static final String key="INVITECODE_%s";
 
@@ -93,7 +98,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public ServiceResult<Integer> insertUser(UserDo userDo) {
     ServiceResult<Integer> result=new ServiceResult<>();
-    userDo.setUserId(System.currentTimeMillis());
+    userDo.setUserId(IdUtil.generateId()/1000);
     try {
       int count = userDao.insertUser(userDo);
       result.setSuccess(true);
@@ -151,10 +156,9 @@ public class UserServiceImpl implements UserService {
 
     redisDao.setExpire(redisKey, inviteCode, 60*6);
     try {
-      //String result = SendMsgUtil.sendInviteCodeMsg(mobile,inviteCode);
-      InviteCodeResult inviteCodeResult =new InviteCodeResult();
+      String result = SendMsgUtil.sendMsg(mobile,inviteCode,STRING_INVITECODE_MSG);
+      InviteCodeResult inviteCodeResult = (InviteCodeResult) JsonUtil.toJson(result, InviteCodeResult.class);
       resultServiceResult.setData(inviteCodeResult);
-      resultServiceResult.setSuccess(true);
     } catch (Exception e) {
       logger.error("sendMsg error",e);
       return resultServiceResult;
