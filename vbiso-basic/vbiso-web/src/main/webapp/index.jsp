@@ -15,7 +15,7 @@
     <div class="layui-header">
         <div class="layui-logo">个人收支管理系统</div>
         <ul class="layui-nav layui-layout-left" id="header">
-            <li class="layui-nav-item"><a href="#" class="showPage" data-id="showPage">首页</a></li>
+            <%--<li class="layui-nav-item"><a href="#" class="showPage" data-id="showPage">首页</a></li>--%>
             <li class="layui-nav-item"><i class="layui-icon layui-icon-face-smile" id="refresh">&#xe669;</i>
             </li>
         </ul>

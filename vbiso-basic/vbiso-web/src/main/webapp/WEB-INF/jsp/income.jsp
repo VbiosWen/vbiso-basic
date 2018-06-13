@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<button class="layui-btn" id="addIncome">添加收支记录</button>
+<button class="layui-btn" id="addIncome">添加</button>
 <div class="layui-inline">
     <label class="layui-form-label">查询:</label>
     <div class="layui-input-inline">

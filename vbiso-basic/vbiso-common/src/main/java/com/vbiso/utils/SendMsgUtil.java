@@ -2,6 +2,12 @@ package com.vbiso.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -29,6 +35,54 @@ public class SendMsgUtil {
   private static final String STRING_INVITECODE_MSG="【个人收支管理系统】您的验证码是%s。如非本人操作，请忽略本短信";
 
   private static final String STRING_TIMEJOB_WARN_MSG="【个人收支管理系统】亲爱的用户，您的预期消费已超过预警%s,请注意哦！";
+
+  private static final int maxThreadQueue=8;
+
+  private static final int initPoolSize=4;
+
+  private static BlockingQueue<Runnable> localQueue;
+
+  private static ThreadPoolExecutor threadPool;
+
+  static {
+    localQueue=new LinkedBlockingQueue<>(maxThreadQueue);
+    threadPool=new ThreadPoolExecutor(initPoolSize, maxThreadQueue, 0L,
+        TimeUnit.MILLISECONDS, localQueue, new ThreadFactory() {
+      private AtomicInteger atomicInteger=new AtomicInteger();
+
+      @Override
+      public Thread newThread(Runnable r) {
+        return new Thread(r,"vbisowen-msg-send-thread-"+ atomicInteger.incrementAndGet());
+      }
+    });
+    threadPool.setRejectedExecutionHandler(((r, executor) -> {
+      try {
+        executor.getQueue().put(r);
+      }catch (Exception ex){
+        throw new IllegalThreadStateException();
+      }
+    }));
+  }
+
+
+  public static void sendMsgThread(String mobile,String data,String signture)throws Exception{
+    try {
+      threadPool.execute(()->{
+        try {
+          step:
+          {
+            sendMsg(mobile,data,signture);
+          }
+        }catch (IllegalThreadStateException ex){
+
+        } catch (Exception e) {
+          throw new RuntimeException(e);
+        }
+      });
+    }catch (IllegalThreadStateException ex){
+      throw new IllegalThreadStateException();
+    }
+  }
 
   public static String sendMsg(String mobile,String data,String signture)throws Exception{
 

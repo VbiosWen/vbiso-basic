@@ -90,7 +90,7 @@ public class ExpensesWarnJob {
     UserDo userInfo = userDao.getUserInfo(userId);
     try {
       SendMsgUtil
-          .sendMsg(userInfo.getUserMobile(), String.valueOf(v), STRING_TIMEJOB_WARN_MSG);
+          .sendMsgThread(userInfo.getUserMobile(), String.valueOf(v), STRING_TIMEJOB_WARN_MSG);
     } catch (Exception e) {
     }
   }

@@ -117,5 +117,13 @@ public class UserDaoTest {
     System.out.println(sumIncome);
   }
 
+  @Test
+  public void testSixteen(){
+    int a=0x1010;
+    System.out.println(a);
+    int b=0x1;
+    System.out.println(b);
+  }
+
 
 }
