@@ -7,19 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90648513-17b1-4a5d-9689-1c382029ab06" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/info/MailInfo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/QQMailInstanceUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vbiso-dao/sql/base.sql" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/vbiso_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/vbiso_web_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_13_9_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/vbiso-common/pom.xml" afterPath="$PROJECT_DIR$/vbiso-common/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/SendMsgUtil.java" afterPath="$PROJECT_DIR$/vbiso-common/src/main/java/com/vbiso/utils/SendMsgUtil.java" />
-      <change beforePath="$PROJECT_DIR$/vbiso-dao/pom.xml" afterPath="$PROJECT_DIR$/vbiso-dao/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java" afterPath="$PROJECT_DIR$/vbiso-dao/src/test/java/com/vbiso/dao/test/UserDaoTest.java" />
-      <change beforePath="$PROJECT_DIR$/vbiso-timejob/src/main/java/com/vbiso/timejob/ExpensesWarnJob.java" afterPath="$PROJECT_DIR$/vbiso-timejob/src/main/java/com/vbiso/timejob/ExpensesWarnJob.java" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/WEB-INF/jsp/income.jsp" />
-      <change beforePath="$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/vbiso-web/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/vbiso-dao/sql/base.sql" afterPath="$PROJECT_DIR$/vbiso-dao/sql/base.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/vbiso-service/target/" />
@@ -121,8 +109,8 @@
       <file leaf-file-name="base.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vbiso-dao/sql/base.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="60">
+              <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -983,7 +971,7 @@
       <workItem from="1527936861772" duration="628000" />
       <workItem from="1528098844657" duration="2728000" />
       <workItem from="1528203950283" duration="14242000" />
-      <workItem from="1528905364140" duration="125000" />
+      <workItem from="1528905364140" duration="451000" />
     </task>
     <servers />
   </component>
@@ -1020,7 +1008,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="471732000" />
+    <option name="totallyTimeSpent" value="472058000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="0" />
@@ -1048,7 +1036,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.48969072" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30874318" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30874318" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3004292" sideWeight="0.5355731" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1724,8 +1712,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vbiso-dao/sql/base.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="60">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding />
         </state>
       </provider>

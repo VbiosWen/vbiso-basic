@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS vbiso;
 
 CREATE DATABASE vbiso DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 
+USE vbiso;
+
 DROP TABLE IF EXISTS category;
 -- 分类表
 CREATE TABLE category
